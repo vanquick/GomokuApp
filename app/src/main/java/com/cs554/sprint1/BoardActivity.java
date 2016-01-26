@@ -19,6 +19,7 @@ import java.util.Arrays;
 public class BoardActivity extends AppCompatActivity {
 
     int player = 0;
+    boolean first_game = true;
     int p1_wins, p2_wins = 0;
     int size = 0;
     int board[][] =
