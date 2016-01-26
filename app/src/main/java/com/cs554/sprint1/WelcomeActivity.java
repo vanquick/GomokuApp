@@ -20,7 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
     int num_players, board_size = 0;
     boolean on_line, standard_mode = false;
 
-
+// Testing check into project repository again
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
