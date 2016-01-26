@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.cs554.sprint1.WelcomeActivity"
+        tools:showIn="@layout/activity_welcome">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select number of players"
+            android:id="@+id/num_players_text"
+            />
+
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/num_players_text"
+            android:id="@+id/player_radio_group"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Player"
+                android:id="@+id/one_palyer_radio"
+                android:onClick="SelectNumPlayers"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Player"
+                android:id="@+id/two_player_radio"
+                android:onClick="SelectNumPlayers"
+                />
+        </RadioGroup>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player_radio_group"
+            android:id="@+id/on_off_line_text"
+            android:text="Selcet if you are playing on-line or off-line"
+            />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/on_off_line_text"
+            android:id="@+id/on_off_line_radio_group"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="on-line"
+                android:id="@+id/on_line_radio"
+                android:onClick="SelectOnLine"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="off-line"
+                android:id="@+id/off_line_radio"
+                android:onClick="SelectOnLine"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/on_off_line_radio_group"
+            android:id="@+id/style_text"
+            android:text="Selcet freestyle or standard mode"
+            />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/style_text"
+            android:id="@+id/style_radio_group"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Freestlye"
+                android:id="@+id/freestylee_radio"
+                android:onClick="SelectMode"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standard"
+                android:id="@+id/standard_radio"
+                android:onClick="SelectMode"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/style_radio_group"
+            android:id="@+id/board_size_text"
+            android:text="Selcet board size"
+            />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/board_size_text"
+            android:id="@+id/board_size_radio_group"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="10 X 10"
+                android:id="@+id/ten_radio"
+                android:onClick="SelectSize"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="15 X 15"
+                android:id="@+id/fifteen_radio"
+                android:onClick="SelectSize"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="20 X 20"
+                android:id="@+id/twenty_radio"
+                android:onClick="SelectSize"
+                />
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/board_size_radio_group"
+            android:text="PLAY"
+            android:id="@+id/play_button"
+            android:onClick="GoToPlayScreen"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
