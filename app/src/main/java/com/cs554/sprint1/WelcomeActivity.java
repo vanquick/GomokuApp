@@ -16,7 +16,7 @@ import android.widget.Toast;
 // Changed project name to cs554.sprint1
 
 public class WelcomeActivity extends AppCompatActivity {
-
+    //testcomment
     int num_players, board_size = 0;
     boolean on_line, standard_mode = false;
 
