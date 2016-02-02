@@ -3,6 +3,7 @@ package com.cs554.sprint1;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +12,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BoardActivity extends AppCompatActivity {
 
+    Chronometer timer;
     int player = 0;
+    boolean first_game = true;
     int p1_wins, p2_wins = 0;
     int size = 0;
     int board[][] =
@@ -70,6 +76,9 @@ public class BoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
+
+        //set the timer variable
+        timer = (Chronometer) findViewById(R.id.timer_display);
 
         Intent passed = getIntent();
 
@@ -144,6 +153,8 @@ public class BoardActivity extends AppCompatActivity {
                     stone.setBackgroundResource(R.drawable.black_board);
                     stone.setTextColor(0);
                     stone.setText("G");
+                    timer.setBase(SystemClock.elapsedRealtime());
+                    timer.start();
                 } else {
 //                    stone.setBackgroundColor(Color.GREEN);
                     player = 0;
@@ -151,8 +162,10 @@ public class BoardActivity extends AppCompatActivity {
                     ((TextView)findViewById(R.id.player_turn_text)).setText("" +
                             "Player 1's Turn");
                     stone.setBackgroundResource(R.drawable.white_board);
-                    stone.setTextColor(Color.rgb(255,255,255));
+                    stone.setTextColor(Color.rgb(255, 255, 255));
                     stone.setText("R");
+                    timer.setBase(SystemClock.elapsedRealtime());
+                    timer.start();
                 }
             }
 
