@@ -47,7 +47,7 @@
             android:id="@+id/stone90"
             android:background="@drawable/wood_square"
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:text=""
+            android:text=" "
             android:layout_row="9"
             android:layout_column="0"
             android:onClick="onButtonClicked"
@@ -56,7 +56,7 @@
 
         <Button
             android:id="@+id/stone91"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -68,7 +68,7 @@
 
         <Button
             android:id="@+id/stone92"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -80,7 +80,7 @@
 
         <Button
             android:id="@+id/stone93"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -92,7 +92,7 @@
 
         <Button
             android:id="@+id/stone94"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -104,7 +104,7 @@
 
         <Button
             android:id="@+id/stone95"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,7 +118,7 @@
             android:id="@+id/stone96"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -130,7 +130,7 @@
             android:id="@+id/stone97"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -142,7 +142,7 @@
             android:id="@+id/stone98"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -154,7 +154,7 @@
             android:id="@+id/stone99"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -167,7 +167,7 @@
             android:id="@+id/stone80"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -179,7 +179,7 @@
             android:id="@+id/stone81"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -191,7 +191,7 @@
             android:id="@+id/stone82"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -203,7 +203,7 @@
             android:id="@+id/stone83"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -215,7 +215,7 @@
             android:id="@+id/stone84"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -227,7 +227,7 @@
             android:id="@+id/stone85"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -239,7 +239,7 @@
             android:id="@+id/stone86"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -251,7 +251,7 @@
             android:id="@+id/stone87"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -263,7 +263,7 @@
             android:id="@+id/stone88"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -276,7 +276,7 @@
             android:id="@+id/stone89"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -289,7 +289,7 @@
             android:id="@+id/stone70"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -301,7 +301,7 @@
             android:id="@+id/stone71"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -313,7 +313,7 @@
             android:id="@+id/stone72"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -325,7 +325,7 @@
             android:id="@+id/stone73"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -337,7 +337,7 @@
             android:id="@+id/stone74"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -349,7 +349,7 @@
             android:id="@+id/stone75"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -361,7 +361,7 @@
             android:id="@+id/stone76"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -373,7 +373,7 @@
             android:id="@+id/stone77"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -385,7 +385,7 @@
             android:id="@+id/stone78"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -397,7 +397,7 @@
             android:id="@+id/stone79"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -409,7 +409,7 @@
             android:id="@+id/stone60"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -421,7 +421,7 @@
             android:id="@+id/stone61"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -433,7 +433,7 @@
             android:id="@+id/stone62"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -445,7 +445,7 @@
             android:id="@+id/stone63"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -457,7 +457,7 @@
             android:id="@+id/stone64"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -469,7 +469,7 @@
             android:id="@+id/stone65"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -481,7 +481,7 @@
             android:id="@+id/stone66"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -493,7 +493,7 @@
             android:id="@+id/stone67"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -505,7 +505,7 @@
             android:id="@+id/stone68"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -517,7 +517,7 @@
             android:id="@+id/stone69"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -529,7 +529,7 @@
             android:id="@+id/stone50"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -541,7 +541,7 @@
             android:id="@+id/stone51"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -553,7 +553,7 @@
             android:id="@+id/stone52"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -565,7 +565,7 @@
             android:id="@+id/stone53"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -577,7 +577,7 @@
             android:id="@+id/stone54"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -589,7 +589,7 @@
             android:id="@+id/stone55"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -601,7 +601,7 @@
             android:id="@+id/stone56"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -613,7 +613,7 @@
             android:id="@+id/stone57"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -625,7 +625,7 @@
             android:id="@+id/stone58"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -637,7 +637,7 @@
             android:id="@+id/stone59"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -649,7 +649,7 @@
             android:id="@+id/stone40"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -661,7 +661,7 @@
             android:id="@+id/stone41"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -673,7 +673,7 @@
             android:id="@+id/stone42"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -685,7 +685,7 @@
             android:id="@+id/stone43"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -697,7 +697,7 @@
             android:id="@+id/stone44"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -709,7 +709,7 @@
             android:id="@+id/stone45"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -721,7 +721,7 @@
             android:id="@+id/stone46"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -733,7 +733,7 @@
             android:id="@+id/stone47"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -745,7 +745,7 @@
             android:id="@+id/stone48"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -757,7 +757,7 @@
             android:id="@+id/stone49"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -769,7 +769,7 @@
             android:id="@+id/stone30"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -781,7 +781,7 @@
             android:id="@+id/stone31"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -793,7 +793,7 @@
             android:id="@+id/stone32"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -805,7 +805,7 @@
             android:id="@+id/stone33"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -817,7 +817,7 @@
             android:id="@+id/stone34"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -829,7 +829,7 @@
             android:id="@+id/stone35"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -841,7 +841,7 @@
             android:id="@+id/stone36"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -853,7 +853,7 @@
             android:id="@+id/stone37"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -865,7 +865,7 @@
             android:id="@+id/stone38"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -877,7 +877,7 @@
             android:id="@+id/stone39"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -889,7 +889,7 @@
             android:id="@+id/stone20"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -901,7 +901,7 @@
             android:id="@+id/stone21"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -913,7 +913,7 @@
             android:id="@+id/stone22"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -925,7 +925,7 @@
             android:id="@+id/stone23"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -937,7 +937,7 @@
             android:id="@+id/stone24"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -949,7 +949,7 @@
             android:id="@+id/stone25"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -961,7 +961,7 @@
             android:id="@+id/stone26"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -973,7 +973,7 @@
             android:id="@+id/stone27"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -985,7 +985,7 @@
             android:id="@+id/stone28"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -997,7 +997,7 @@
             android:id="@+id/stone29"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1009,7 +1009,7 @@
             android:id="@+id/stone10"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1021,7 +1021,7 @@
             android:id="@+id/stone11"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1033,7 +1033,7 @@
             android:id="@+id/stone12"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1045,7 +1045,7 @@
             android:id="@+id/stone13"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1057,7 +1057,7 @@
             android:id="@+id/stone14"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1069,7 +1069,7 @@
             android:id="@+id/stone15"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1081,7 +1081,7 @@
             android:id="@+id/stone16"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1093,7 +1093,7 @@
             android:id="@+id/stone17"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1105,7 +1105,7 @@
             android:id="@+id/stone18"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1117,7 +1117,7 @@
             android:id="@+id/stone19"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1127,7 +1127,7 @@
 
         <Button
             android:id="@+id/stone00"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1139,7 +1139,7 @@
 
         <Button
             android:id="@+id/stone01"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1151,7 +1151,7 @@
 
         <Button
             android:id="@+id/stone02"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1163,7 +1163,7 @@
 
         <Button
             android:id="@+id/stone03"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1175,7 +1175,7 @@
 
         <Button
             android:id="@+id/stone04"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1187,7 +1187,7 @@
 
         <Button
             android:id="@+id/stone05"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1199,7 +1199,7 @@
 
         <Button
             android:id="@+id/stone06"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1211,7 +1211,7 @@
 
         <Button
             android:id="@+id/stone07"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1223,7 +1223,7 @@
 
         <Button
             android:id="@+id/stone08"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1235,7 +1235,7 @@
 
         <Button
             android:id="@+id/stone09"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1250,7 +1250,7 @@
 
         <Button
             android:id="@+id/stone0a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1263,7 +1263,7 @@
 
         <Button
             android:id="@+id/stone0b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1276,7 +1276,7 @@
 
         <Button
             android:id="@+id/stone0c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1289,7 +1289,7 @@
 
         <Button
             android:id="@+id/stone0d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1302,7 +1302,7 @@
 
         <Button
             android:id="@+id/stone0e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1315,7 +1315,7 @@
 
         <Button
             android:id="@+id/stone0f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1328,7 +1328,7 @@
 
         <Button
             android:id="@+id/stone0g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1341,7 +1341,7 @@
 
         <Button
             android:id="@+id/stone0h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1354,7 +1354,7 @@
 
         <Button
             android:id="@+id/stone0i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1367,7 +1367,7 @@
 
         <Button
             android:id="@+id/stone0j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1380,7 +1380,7 @@
 
         <Button
             android:id="@+id/stone1a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1393,7 +1393,7 @@
 
         <Button
             android:id="@+id/stone1b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1406,7 +1406,7 @@
 
         <Button
             android:id="@+id/stone1c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1419,7 +1419,7 @@
 
         <Button
             android:id="@+id/stone1d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1432,7 +1432,7 @@
 
         <Button
             android:id="@+id/stone1e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1445,7 +1445,7 @@
 
         <Button
             android:id="@+id/stone1f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1458,7 +1458,7 @@
 
         <Button
             android:id="@+id/stone1g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1471,7 +1471,7 @@
 
         <Button
             android:id="@+id/stone1h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1484,7 +1484,7 @@
 
         <Button
             android:id="@+id/stone1i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1497,7 +1497,7 @@
 
         <Button
             android:id="@+id/stone1j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1510,7 +1510,7 @@
 
         <Button
             android:id="@+id/stone2a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1523,7 +1523,7 @@
 
         <Button
             android:id="@+id/stone2b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1536,7 +1536,7 @@
 
         <Button
             android:id="@+id/stone2c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1549,7 +1549,7 @@
 
         <Button
             android:id="@+id/stone2d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1562,7 +1562,7 @@
 
         <Button
             android:id="@+id/stone2e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1575,7 +1575,7 @@
 
         <Button
             android:id="@+id/stone2f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1588,7 +1588,7 @@
 
         <Button
             android:id="@+id/stone2g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1601,7 +1601,7 @@
 
         <Button
             android:id="@+id/stone2h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1614,7 +1614,7 @@
 
         <Button
             android:id="@+id/stone2i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1627,7 +1627,7 @@
 
         <Button
             android:id="@+id/stone2j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1640,7 +1640,7 @@
 
         <Button
             android:id="@+id/stone3a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1653,7 +1653,7 @@
 
         <Button
             android:id="@+id/stone3b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1666,7 +1666,7 @@
 
         <Button
             android:id="@+id/stone3c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1679,7 +1679,7 @@
 
         <Button
             android:id="@+id/stone3d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1692,7 +1692,7 @@
 
         <Button
             android:id="@+id/stone3e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1705,7 +1705,7 @@
 
         <Button
             android:id="@+id/stone3f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1718,7 +1718,7 @@
 
         <Button
             android:id="@+id/stone3g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1731,7 +1731,7 @@
 
         <Button
             android:id="@+id/stone3h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1744,7 +1744,7 @@
 
         <Button
             android:id="@+id/stone3i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1757,7 +1757,7 @@
 
         <Button
             android:id="@+id/stone3j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1770,7 +1770,7 @@
 
         <Button
             android:id="@+id/stone4a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1783,7 +1783,7 @@
 
         <Button
             android:id="@+id/stone4b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1796,7 +1796,7 @@
 
         <Button
             android:id="@+id/stone4c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1809,7 +1809,7 @@
 
         <Button
             android:id="@+id/stone4d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1822,7 +1822,7 @@
 
         <Button
             android:id="@+id/stone4e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1835,7 +1835,7 @@
 
         <Button
             android:id="@+id/stone4f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1848,7 +1848,7 @@
 
         <Button
             android:id="@+id/stone4g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1861,7 +1861,7 @@
 
         <Button
             android:id="@+id/stone4h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1874,7 +1874,7 @@
 
         <Button
             android:id="@+id/stone4i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1887,7 +1887,7 @@
 
         <Button
             android:id="@+id/stone4j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1900,7 +1900,7 @@
 
         <Button
             android:id="@+id/stone5a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1913,7 +1913,7 @@
 
         <Button
             android:id="@+id/stone5b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1926,7 +1926,7 @@
 
         <Button
             android:id="@+id/stone5c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1939,7 +1939,7 @@
 
         <Button
             android:id="@+id/stone5d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1952,7 +1952,7 @@
 
         <Button
             android:id="@+id/stone5e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1965,7 +1965,7 @@
 
         <Button
             android:id="@+id/stone5f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1978,7 +1978,7 @@
 
         <Button
             android:id="@+id/stone5g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1991,7 +1991,7 @@
 
         <Button
             android:id="@+id/stone5h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2004,7 +2004,7 @@
 
         <Button
             android:id="@+id/stone5i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2017,7 +2017,7 @@
 
         <Button
             android:id="@+id/stone5j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2030,7 +2030,7 @@
 
         <Button
             android:id="@+id/stone6a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2043,7 +2043,7 @@
 
         <Button
             android:id="@+id/stone6b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2056,7 +2056,7 @@
 
         <Button
             android:id="@+id/stone6c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2069,7 +2069,7 @@
 
         <Button
             android:id="@+id/stone6d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2082,7 +2082,7 @@
 
         <Button
             android:id="@+id/stone6e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2095,7 +2095,7 @@
 
         <Button
             android:id="@+id/stone6f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2108,7 +2108,7 @@
 
         <Button
             android:id="@+id/stone6g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2121,7 +2121,7 @@
 
         <Button
             android:id="@+id/stone6h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2134,7 +2134,7 @@
 
         <Button
             android:id="@+id/stone6i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2147,7 +2147,7 @@
 
         <Button
             android:id="@+id/stone6j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2160,7 +2160,7 @@
 
         <Button
             android:id="@+id/stone7a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2173,7 +2173,7 @@
 
         <Button
             android:id="@+id/stone7b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2186,7 +2186,7 @@
 
         <Button
             android:id="@+id/stone7c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2199,7 +2199,7 @@
 
         <Button
             android:id="@+id/stone7d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2212,7 +2212,7 @@
 
         <Button
             android:id="@+id/stone7e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2225,7 +2225,7 @@
 
         <Button
             android:id="@+id/stone7f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2238,7 +2238,7 @@
 
         <Button
             android:id="@+id/stone7g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2251,7 +2251,7 @@
 
         <Button
             android:id="@+id/stone7h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2264,7 +2264,7 @@
 
         <Button
             android:id="@+id/stone7i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2277,7 +2277,7 @@
 
         <Button
             android:id="@+id/stone7j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2290,7 +2290,7 @@
 
         <Button
             android:id="@+id/stone8a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2303,7 +2303,7 @@
 
         <Button
             android:id="@+id/stone8b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2316,7 +2316,7 @@
 
         <Button
             android:id="@+id/stone8c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2329,7 +2329,7 @@
 
         <Button
             android:id="@+id/stone8d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2342,7 +2342,7 @@
 
         <Button
             android:id="@+id/stone8e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2355,7 +2355,7 @@
 
         <Button
             android:id="@+id/stone8f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2368,7 +2368,7 @@
 
         <Button
             android:id="@+id/stone8g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2381,7 +2381,7 @@
 
         <Button
             android:id="@+id/stone8h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2394,7 +2394,7 @@
 
         <Button
             android:id="@+id/stone8i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2407,7 +2407,7 @@
 
         <Button
             android:id="@+id/stone8j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2420,7 +2420,7 @@
 
         <Button
             android:id="@+id/stone9a"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2433,7 +2433,7 @@
 
         <Button
             android:id="@+id/stone9b"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2446,7 +2446,7 @@
 
         <Button
             android:id="@+id/stone9c"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2459,7 +2459,7 @@
 
         <Button
             android:id="@+id/stone9d"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2472,7 +2472,7 @@
 
         <Button
             android:id="@+id/stone9e"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2485,7 +2485,7 @@
 
         <Button
             android:id="@+id/stone9f"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2498,7 +2498,7 @@
 
         <Button
             android:id="@+id/stone9g"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2511,7 +2511,7 @@
 
         <Button
             android:id="@+id/stone9h"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2524,7 +2524,7 @@
 
         <Button
             android:id="@+id/stone9i"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2537,7 +2537,7 @@
 
         <Button
             android:id="@+id/stone9j"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2552,7 +2552,7 @@
 
         <Button
             android:id="@+id/stonea0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2565,7 +2565,7 @@
 
         <Button
             android:id="@+id/stonea1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2578,7 +2578,7 @@
 
         <Button
             android:id="@+id/stonea2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2591,7 +2591,7 @@
 
         <Button
             android:id="@+id/stonea3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2604,7 +2604,7 @@
 
         <Button
             android:id="@+id/stonea4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2617,7 +2617,7 @@
 
         <Button
             android:id="@+id/stonea5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2630,7 +2630,7 @@
 
         <Button
             android:id="@+id/stonea6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2643,7 +2643,7 @@
 
         <Button
             android:id="@+id/stonea7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2656,7 +2656,7 @@
 
         <Button
             android:id="@+id/stonea8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2669,7 +2669,7 @@
 
         <Button
             android:id="@+id/stonea9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2682,7 +2682,7 @@
 
         <Button
             android:id="@+id/stoneaa"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2695,7 +2695,7 @@
 
         <Button
             android:id="@+id/stoneab"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2708,7 +2708,7 @@
 
         <Button
             android:id="@+id/stoneac"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2721,7 +2721,7 @@
 
         <Button
             android:id="@+id/stonead"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2734,7 +2734,7 @@
 
         <Button
             android:id="@+id/stoneae"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2747,7 +2747,7 @@
 
         <Button
             android:id="@+id/stoneaf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2760,7 +2760,7 @@
 
         <Button
             android:id="@+id/stoneag"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2773,7 +2773,7 @@
 
         <Button
             android:id="@+id/stoneah"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2786,7 +2786,7 @@
 
         <Button
             android:id="@+id/stoneai"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2799,7 +2799,7 @@
 
         <Button
             android:id="@+id/stoneaj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2812,7 +2812,7 @@
 
         <Button
             android:id="@+id/stoneb0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2825,7 +2825,7 @@
 
         <Button
             android:id="@+id/stoneb1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2838,7 +2838,7 @@
 
         <Button
             android:id="@+id/stoneb2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2851,7 +2851,7 @@
 
         <Button
             android:id="@+id/stoneb3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2864,7 +2864,7 @@
 
         <Button
             android:id="@+id/stoneb4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2877,7 +2877,7 @@
 
         <Button
             android:id="@+id/stoneb5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2890,7 +2890,7 @@
 
         <Button
             android:id="@+id/stoneb6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2903,7 +2903,7 @@
 
         <Button
             android:id="@+id/stoneb7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2916,7 +2916,7 @@
 
         <Button
             android:id="@+id/stoneb8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2929,7 +2929,7 @@
 
         <Button
             android:id="@+id/stoneb9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2942,7 +2942,7 @@
 
         <Button
             android:id="@+id/stoneba"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2955,7 +2955,7 @@
 
         <Button
             android:id="@+id/stonebb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2968,7 +2968,7 @@
 
         <Button
             android:id="@+id/stonebc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2981,7 +2981,7 @@
 
         <Button
             android:id="@+id/stonebd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2994,7 +2994,7 @@
 
         <Button
             android:id="@+id/stonebe"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3007,7 +3007,7 @@
 
         <Button
             android:id="@+id/stonebf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3020,7 +3020,7 @@
 
         <Button
             android:id="@+id/stonebg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3033,7 +3033,7 @@
 
         <Button
             android:id="@+id/stonebh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3046,7 +3046,7 @@
 
         <Button
             android:id="@+id/stonebi"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3059,7 +3059,7 @@
 
         <Button
             android:id="@+id/stonebj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3072,7 +3072,7 @@
 
         <Button
             android:id="@+id/stonec0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3085,7 +3085,7 @@
 
         <Button
             android:id="@+id/stonec1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3098,7 +3098,7 @@
 
         <Button
             android:id="@+id/stonec2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3111,7 +3111,7 @@
 
         <Button
             android:id="@+id/stonec3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3124,7 +3124,7 @@
 
         <Button
             android:id="@+id/stonec4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3137,7 +3137,7 @@
 
         <Button
             android:id="@+id/stonec5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3150,7 +3150,7 @@
 
         <Button
             android:id="@+id/stonec6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3163,7 +3163,7 @@
 
         <Button
             android:id="@+id/stonec7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3176,7 +3176,7 @@
 
         <Button
             android:id="@+id/stonec8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3189,7 +3189,7 @@
 
         <Button
             android:id="@+id/stonec9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3202,7 +3202,7 @@
 
         <Button
             android:id="@+id/stoneca"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3215,7 +3215,7 @@
 
         <Button
             android:id="@+id/stonecb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3228,7 +3228,7 @@
 
         <Button
             android:id="@+id/stonecc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3241,7 +3241,7 @@
 
         <Button
             android:id="@+id/stonecd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3254,7 +3254,7 @@
 
         <Button
             android:id="@+id/stonece"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3267,7 +3267,7 @@
 
         <Button
             android:id="@+id/stonecf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3280,7 +3280,7 @@
 
         <Button
             android:id="@+id/stonecg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3293,7 +3293,7 @@
 
         <Button
             android:id="@+id/stonech"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3306,7 +3306,7 @@
 
         <Button
             android:id="@+id/stoneci"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3319,7 +3319,7 @@
 
         <Button
             android:id="@+id/stonecj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3332,7 +3332,7 @@
 
         <Button
             android:id="@+id/stoned0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3345,7 +3345,7 @@
 
         <Button
             android:id="@+id/stoned1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3358,7 +3358,7 @@
 
         <Button
             android:id="@+id/stoned2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3371,7 +3371,7 @@
 
         <Button
             android:id="@+id/stoned3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3384,7 +3384,7 @@
 
         <Button
             android:id="@+id/stoned4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3397,7 +3397,7 @@
 
         <Button
             android:id="@+id/stoned5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3410,7 +3410,7 @@
 
         <Button
             android:id="@+id/stoned6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3423,7 +3423,7 @@
 
         <Button
             android:id="@+id/stoned7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3436,7 +3436,7 @@
 
         <Button
             android:id="@+id/stoned8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3449,7 +3449,7 @@
 
         <Button
             android:id="@+id/stoned9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3462,7 +3462,7 @@
 
         <Button
             android:id="@+id/stoneda"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3475,7 +3475,7 @@
 
         <Button
             android:id="@+id/stonedb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3488,7 +3488,7 @@
 
         <Button
             android:id="@+id/stonedc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3501,7 +3501,7 @@
 
         <Button
             android:id="@+id/stonedd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3514,7 +3514,7 @@
 
         <Button
             android:id="@+id/stonede"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3527,7 +3527,7 @@
 
         <Button
             android:id="@+id/stonedf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3540,7 +3540,7 @@
 
         <Button
             android:id="@+id/stonedg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3553,7 +3553,7 @@
 
         <Button
             android:id="@+id/stonedh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3566,7 +3566,7 @@
 
         <Button
             android:id="@+id/stonedi"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3579,7 +3579,7 @@
 
         <Button
             android:id="@+id/stonedj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3592,7 +3592,7 @@
 
         <Button
             android:id="@+id/stonee0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3605,7 +3605,7 @@
 
         <Button
             android:id="@+id/stonee1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3618,7 +3618,7 @@
 
         <Button
             android:id="@+id/stonee2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3631,7 +3631,7 @@
 
         <Button
             android:id="@+id/stonee3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3644,7 +3644,7 @@
 
         <Button
             android:id="@+id/stonee4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3657,7 +3657,7 @@
 
         <Button
             android:id="@+id/stonee5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3670,7 +3670,7 @@
 
         <Button
             android:id="@+id/stonee6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3683,7 +3683,7 @@
 
         <Button
             android:id="@+id/stonee7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3696,7 +3696,7 @@
 
         <Button
             android:id="@+id/stonee8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3709,7 +3709,7 @@
 
         <Button
             android:id="@+id/stonee9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3722,7 +3722,7 @@
 
         <Button
             android:id="@+id/stoneea"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3735,7 +3735,7 @@
 
         <Button
             android:id="@+id/stoneeb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3748,7 +3748,7 @@
 
         <Button
             android:id="@+id/stoneec"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3761,7 +3761,7 @@
 
         <Button
             android:id="@+id/stoneed"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3774,7 +3774,7 @@
 
         <Button
             android:id="@+id/stoneee"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3787,7 +3787,7 @@
 
         <Button
             android:id="@+id/stoneef"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3800,7 +3800,7 @@
 
         <Button
             android:id="@+id/stoneeg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3813,7 +3813,7 @@
 
         <Button
             android:id="@+id/stoneeh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3826,7 +3826,7 @@
 
         <Button
             android:id="@+id/stoneei"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3839,7 +3839,7 @@
 
         <Button
             android:id="@+id/stoneej"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3852,7 +3852,7 @@
 
         <Button
             android:id="@+id/stonef0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3865,7 +3865,7 @@
 
         <Button
             android:id="@+id/stonef1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3878,7 +3878,7 @@
 
         <Button
             android:id="@+id/stonef2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3891,7 +3891,7 @@
 
         <Button
             android:id="@+id/stonef3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3904,7 +3904,7 @@
 
         <Button
             android:id="@+id/stonef4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3917,7 +3917,7 @@
 
         <Button
             android:id="@+id/stonef5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3930,7 +3930,7 @@
 
         <Button
             android:id="@+id/stonef6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3943,7 +3943,7 @@
 
         <Button
             android:id="@+id/stonef7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3956,7 +3956,7 @@
 
         <Button
             android:id="@+id/stonef8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3969,7 +3969,7 @@
 
         <Button
             android:id="@+id/stonef9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3982,7 +3982,7 @@
 
         <Button
             android:id="@+id/stonefa"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -3995,7 +3995,7 @@
 
         <Button
             android:id="@+id/stonefb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4008,7 +4008,7 @@
 
         <Button
             android:id="@+id/stonefc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4021,7 +4021,7 @@
 
         <Button
             android:id="@+id/stonefd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4034,7 +4034,7 @@
 
         <Button
             android:id="@+id/stonefe"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4047,7 +4047,7 @@
 
         <Button
             android:id="@+id/stoneff"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4060,7 +4060,7 @@
 
         <Button
             android:id="@+id/stonefg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4073,7 +4073,7 @@
 
         <Button
             android:id="@+id/stonefh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4086,7 +4086,7 @@
 
         <Button
             android:id="@+id/stonefi"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4099,7 +4099,7 @@
 
         <Button
             android:id="@+id/stonefj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4112,7 +4112,7 @@
 
         <Button
             android:id="@+id/stoneg0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4125,7 +4125,7 @@
 
         <Button
             android:id="@+id/stoneg1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4138,7 +4138,7 @@
 
         <Button
             android:id="@+id/stoneg2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4151,7 +4151,7 @@
 
         <Button
             android:id="@+id/stoneg3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4164,7 +4164,7 @@
 
         <Button
             android:id="@+id/stoneg4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4177,7 +4177,7 @@
 
         <Button
             android:id="@+id/stoneg5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4190,7 +4190,7 @@
 
         <Button
             android:id="@+id/stoneg6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4203,7 +4203,7 @@
 
         <Button
             android:id="@+id/stoneg7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4216,7 +4216,7 @@
 
         <Button
             android:id="@+id/stoneg8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4229,7 +4229,7 @@
 
         <Button
             android:id="@+id/stoneg9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4242,7 +4242,7 @@
 
         <Button
             android:id="@+id/stonega"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4255,7 +4255,7 @@
 
         <Button
             android:id="@+id/stonegb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4268,7 +4268,7 @@
 
         <Button
             android:id="@+id/stonegc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4281,7 +4281,7 @@
 
         <Button
             android:id="@+id/stonegd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4294,7 +4294,7 @@
 
         <Button
             android:id="@+id/stonege"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4307,7 +4307,7 @@
 
         <Button
             android:id="@+id/stonegf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4320,7 +4320,7 @@
 
         <Button
             android:id="@+id/stonegg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4333,7 +4333,7 @@
 
         <Button
             android:id="@+id/stonegh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4346,7 +4346,7 @@
 
         <Button
             android:id="@+id/stonegi"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4359,7 +4359,7 @@
 
         <Button
             android:id="@+id/stonegj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4372,7 +4372,7 @@
 
         <Button
             android:id="@+id/stoneh0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4385,7 +4385,7 @@
 
         <Button
             android:id="@+id/stoneh1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4398,7 +4398,7 @@
 
         <Button
             android:id="@+id/stoneh2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4411,7 +4411,7 @@
 
         <Button
             android:id="@+id/stoneh3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4424,7 +4424,7 @@
 
         <Button
             android:id="@+id/stoneh4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4437,7 +4437,7 @@
 
         <Button
             android:id="@+id/stoneh5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4450,7 +4450,7 @@
 
         <Button
             android:id="@+id/stoneh6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4463,7 +4463,7 @@
 
         <Button
             android:id="@+id/stoneh7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4476,7 +4476,7 @@
 
         <Button
             android:id="@+id/stoneh8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4489,7 +4489,7 @@
 
         <Button
             android:id="@+id/stoneh9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4502,7 +4502,7 @@
 
         <Button
             android:id="@+id/stoneha"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4515,7 +4515,7 @@
 
         <Button
             android:id="@+id/stonehb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4528,7 +4528,7 @@
 
         <Button
             android:id="@+id/stonehc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4541,7 +4541,7 @@
 
         <Button
             android:id="@+id/stonehd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4554,7 +4554,7 @@
 
         <Button
             android:id="@+id/stonehe"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4567,7 +4567,7 @@
 
         <Button
             android:id="@+id/stonehf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4580,7 +4580,7 @@
 
         <Button
             android:id="@+id/stonehg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4593,7 +4593,7 @@
 
         <Button
             android:id="@+id/stonehh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4606,7 +4606,7 @@
 
         <Button
             android:id="@+id/stonehi"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4619,7 +4619,7 @@
 
         <Button
             android:id="@+id/stonehj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4632,7 +4632,7 @@
 
         <Button
             android:id="@+id/stonei0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4645,7 +4645,7 @@
 
         <Button
             android:id="@+id/stonei1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4658,7 +4658,7 @@
 
         <Button
             android:id="@+id/stonei2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4671,7 +4671,7 @@
 
         <Button
             android:id="@+id/stonei3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4684,7 +4684,7 @@
 
         <Button
             android:id="@+id/stonei4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4697,7 +4697,7 @@
 
         <Button
             android:id="@+id/stonei5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4710,7 +4710,7 @@
 
         <Button
             android:id="@+id/stonei6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4723,7 +4723,7 @@
 
         <Button
             android:id="@+id/stonei7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4736,7 +4736,7 @@
 
         <Button
             android:id="@+id/stonei8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4749,7 +4749,7 @@
 
         <Button
             android:id="@+id/stonei9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4762,7 +4762,7 @@
 
         <Button
             android:id="@+id/stoneia"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4775,7 +4775,7 @@
 
         <Button
             android:id="@+id/stoneib"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4788,7 +4788,7 @@
 
         <Button
             android:id="@+id/stoneic"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4801,7 +4801,7 @@
 
         <Button
             android:id="@+id/stoneid"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4814,7 +4814,7 @@
 
         <Button
             android:id="@+id/stoneie"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4827,7 +4827,7 @@
 
         <Button
             android:id="@+id/stoneif"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4840,7 +4840,7 @@
 
         <Button
             android:id="@+id/stoneig"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4853,7 +4853,7 @@
 
         <Button
             android:id="@+id/stoneih"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4866,7 +4866,7 @@
 
         <Button
             android:id="@+id/stoneii"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4879,7 +4879,7 @@
 
         <Button
             android:id="@+id/stoneij"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4892,7 +4892,7 @@
 
         <Button
             android:id="@+id/stonej0"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4905,7 +4905,7 @@
 
         <Button
             android:id="@+id/stonej1"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4918,7 +4918,7 @@
 
         <Button
             android:id="@+id/stonej2"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4931,7 +4931,7 @@
 
         <Button
             android:id="@+id/stonej3"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4944,7 +4944,7 @@
 
         <Button
             android:id="@+id/stonej4"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4957,7 +4957,7 @@
 
         <Button
             android:id="@+id/stonej5"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4970,7 +4970,7 @@
 
         <Button
             android:id="@+id/stonej6"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4983,7 +4983,7 @@
 
         <Button
             android:id="@+id/stonej7"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -4996,7 +4996,7 @@
 
         <Button
             android:id="@+id/stonej8"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5009,7 +5009,7 @@
 
         <Button
             android:id="@+id/stonej9"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5022,7 +5022,7 @@
 
         <Button
             android:id="@+id/stoneja"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5035,7 +5035,7 @@
 
         <Button
             android:id="@+id/stonejb"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5048,7 +5048,7 @@
 
         <Button
             android:id="@+id/stonejc"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5061,7 +5061,7 @@
 
         <Button
             android:id="@+id/stonejd"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5074,7 +5074,7 @@
 
         <Button
             android:id="@+id/stoneje"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5087,7 +5087,7 @@
 
         <Button
             android:id="@+id/stonejf"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5100,7 +5100,7 @@
 
         <Button
             android:id="@+id/stonejg"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5113,7 +5113,7 @@
 
         <Button
             android:id="@+id/stonejh"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5126,7 +5126,7 @@
 
         <Button
             android:id="@+id/stoneji"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5139,7 +5139,7 @@
 
         <Button
             android:id="@+id/stonejj"
-            android:text=""
+            android:text=" "
             android:background="@drawable/wood_square"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5157,7 +5157,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/scores_text"
         android:textSize="20dp"
-        android:text=""/>
+        android:text=" " />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -5168,7 +5168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/winner_text"
-            android:text=""
+            android:text=" "
             android:textSize="20dp"/>
 
         <Button
