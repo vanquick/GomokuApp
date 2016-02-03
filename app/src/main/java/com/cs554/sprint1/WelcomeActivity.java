@@ -2,14 +2,10 @@ package com.cs554.sprint1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -17,8 +13,8 @@ import android.widget.Toast;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    int num_players, board_size = 0;
-    boolean on_line, standard_mode = false;
+    int board_size = 0;
+    boolean on_line, standard_mode, single = false;
 
 // Testing check into project repository again
 
@@ -40,14 +36,13 @@ public class WelcomeActivity extends AppCompatActivity {
         {
             case R.id.one_palyer_radio:
                 if(players_checked) {
-                    num_players = 1;
-                    Toast.makeText(this, "you picked one player mode", Toast.LENGTH_SHORT).show();
+                    single = true;
                     break;
                 }
             case R.id.two_player_radio:
                 if (players_checked)
                 {
-                    num_players = 2;
+                    single = false;
                     break;
                 }
         }
@@ -125,10 +120,15 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         //first task to complete is 2 player offline freestyle
-        if (num_players == 2 && !on_line && !standard_mode)
+        if (!single && !on_line && !standard_mode)
         {
             Intent newScreen = new Intent(WelcomeActivity.this, BoardActivity.class);
-            newScreen.putExtra("size", board_size);
+            Bundle extras = new Bundle();
+            extras.putInt("size", board_size);
+            extras.putBoolean("single", single);
+            extras.putBoolean("standard_mode", standard_mode);
+            extras.putBoolean("on_line", on_line);
+            newScreen.putExtras(extras);
             startActivity(newScreen);
         }
         else

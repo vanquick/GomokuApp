@@ -2,19 +2,25 @@ package com.cs554.sprint1;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.GridLayout;
+import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Timer;
@@ -25,6 +31,7 @@ public class BoardActivity extends AppCompatActivity {
     Chronometer timer;
     int player = 0;
     boolean first_game = true;
+    boolean standard, cpu, mult_device, single = false;
     int p1_wins, p2_wins = 0;
     int size = 0;
     int board[][] =
@@ -77,61 +84,105 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
-        //set the timer variable
+        //set the timer variable and other widget variables
         timer = (Chronometer) findViewById(R.id.timer_display);
+        TextView player_turn = (TextView)findViewById(R.id.player_turn_text);
 
         Intent passed = getIntent();
 
-        size = passed.getExtras().getInt("size");
+        //get cool typeface for the Gomoku title
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/DIRTYEGO.TTF");
+        timer.setTypeface(tf);
+        player_turn.setTypeface(tf);
+
+
+
+        //on the first match...
+
+        if (first_game) {
+            first_game = false;
+            size = passed.getExtras().getInt("size");
+            single = passed.getExtras().getBoolean("single");
+            standard = passed.getExtras().getBoolean("standard_mode");
+            cpu = passed.getExtras().getBoolean("on_line");
+            mult_device = passed.getExtras().getBoolean("on_line");
+        }
 
         //if the size is 15, show the 15X15 buttons
         //if size is 20, show all buttons
         //10X10 is default
-        if (size > 10)
-        {
-            for (int i = 0; i < 15; i++)
-            {
-                for (int j = 0; j < 15; j++)
-                {
-                    (findViewById(board[i][j])).setVisibility(View.VISIBLE);
+        if (size == 10){
+            for (int i = 0; i < 10; i++){
+                for (int j = 0; j < 10; j++) {
+                    Button button = (Button) (findViewById(board[i][j]));
+//                    Toast.makeText(this, "size = "+, Toast.LENGTH_LONG).show();
+  //                  button.setLayoutParams(new LinearLayout.LayoutParams(30,30));
+
+                    ViewGroup.LayoutParams params = button.getLayoutParams();
+                    params.width = params.width + 10;
+                    params.height = params.height + 10;
+                    button.setLayoutParams(params);
+
+                }
+            }
+
+//            button.setLayoutParams(param);
+
+
+
+        }
+        if (size == 15) {
+            for (int i = 0; i < 15; i++) {
+                for (int j = 0; j < 15; j++) {
+                    Button button = (Button) (findViewById(board[i][j]));
+                    button.setVisibility(View.VISIBLE);
+                    ViewGroup.LayoutParams params = button.getLayoutParams();
+                    params.width = params.width - 5;
+                    params.height = params.height -5;
+                    button.setLayoutParams(params);
+
                 }
             }
         }
 
-        if (size > 15)
-        {
-            for (int i = 15; i < 20; i++)
-            {
-                for (int j = 15; j < 20; j++)
-                {
-                    (findViewById(board[i][j])).setVisibility(View.VISIBLE);
-                }
-            }
+        if (size > 15) {
+             for (int i = 0; i < 20; i++) {
+                 for (int j = 0; j < 20; j++) {
+                     Button button = (Button) (findViewById(board[i][j]));
+                     button.setVisibility(View.VISIBLE);
+                     ViewGroup.LayoutParams params = button.getLayoutParams();
+                     params.width = params.width - 10;
+                     params.height = params.height -10;
+                     button.setLayoutParams(params);
+
+                 }
+             }
         }
+
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_welcome, menu);
-        return true;
-    }
+//        getMenuInflater().inflate(R.menu.menu_welcome, menu);
+//        return true;
+//    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+//        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
-        return super.onOptionsItemSelected(item);
-    }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     public void onButtonClicked(View view) {
 
