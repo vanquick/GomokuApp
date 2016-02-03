@@ -49,10 +49,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         switch (view.getId())
         {
-            case R.id.one_palyer_radio:
+            case R.id.one_player_radio:
                 if(players_checked) {
                     num_players = 1;
-                    Toast.makeText(this, "you picked one player mode", Toast.LENGTH_SHORT).show();
+             //       Toast.makeText(this, "you picked one player mode", Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.two_player_radio:
@@ -96,7 +96,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     standard_mode = true;
                     break;
                 }
-            case R.id.freestylee_radio:
+            case R.id.freestyle_radio:
                 if (button_checked)
                 {
                     standard_mode = false;
@@ -136,10 +136,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         //first task to complete is 2 player offline freestyle
-        if (num_players == 2 && !on_line && !standard_mode)
+//        if (num_players == 2 && !on_line && !standard_mode)
+        if (!on_line && !standard_mode)
         {
             Intent newScreen = new Intent(WelcomeActivity.this, BoardActivity.class);
             newScreen.putExtra("size", board_size);
+            newScreen.putExtra("players", num_players);
             startActivity(newScreen);
         }
         else

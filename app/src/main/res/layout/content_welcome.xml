@@ -3,9 +3,8 @@
 <ScrollView
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="false">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,94 +19,59 @@
         tools:context="com.cs554.sprint1.WelcomeActivity"
         tools:showIn="@layout/activity_welcome">
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select number of players"
-            android:id="@+id/num_players_text"
-            />
-
-
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/num_players_text"
-            android:id="@+id/player_radio_group"
-            >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 Player"
-                android:id="@+id/one_palyer_radio"
-                android:onClick="SelectNumPlayers"
-                />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2 Player"
-                android:id="@+id/two_player_radio"
-                android:onClick="SelectNumPlayers"
-                />
-        </RadioGroup>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/player_radio_group"
-            android:id="@+id/on_off_line_text"
-            android:text="Selcet if you are playing on-line or off-line"
+            android:id="@+id/line_text"
+            android:text="Select online or offline"
             />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/on_off_line_text"
-            android:id="@+id/on_off_line_radio_group"
+            android:layout_below="@+id/line_text"
+            android:orientation="vertical"
+            android:id="@+id/line_radio_group"
             >
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="on-line"
+                android:text="On-line"
                 android:id="@+id/on_line_radio"
-                android:onClick="SelectOnLine"
+                android:onClick="SelectMode"
                 />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="off-line"
+                android:text="Off-line"
                 android:id="@+id/off_line_radio"
-                android:onClick="SelectOnLine"
+                android:onClick="SelectMode"
                 />
         </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/on_off_line_radio_group"
             android:id="@+id/style_text"
-            android:text="Selcet freestyle or standard mode"
+            android:layout_below="@id/line_radio_group"
+            android:text="Select freestyle or standard mode"
             />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/style_text"
+            android:orientation="vertical"
             android:id="@+id/style_radio_group"
             >
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Freestlye"
-                android:id="@+id/freestylee_radio"
+                android:text="Freestyle"
+                android:id="@+id/freestyle_radio"
                 android:onClick="SelectMode"
                 />
 
@@ -123,9 +87,43 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Select number of players"
             android:layout_below="@id/style_radio_group"
+            android:id="@+id/num_players_text"
+            />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/num_players_text"
+            android:orientation="vertical"
+            android:id="@+id/player_radio_group"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Player"
+                android:id="@+id/one_player_radio"
+                android:onClick="SelectNumPlayers"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Player"
+                android:id="@+id/two_player_radio"
+                android:onClick="SelectNumPlayers"
+                />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player_radio_group"
             android:id="@+id/board_size_text"
-            android:text="Selcet board size"
+            android:text="Select board size"
             />
 
         <RadioGroup
