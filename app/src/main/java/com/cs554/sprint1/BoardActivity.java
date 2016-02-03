@@ -3,6 +3,7 @@ package com.cs554.sprint1;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,20 +12,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BoardActivity extends AppCompatActivity {
 
+
     int players;
     boolean playingAgainstComputer = true;
+
+    Chronometer timer;
+
     int player = 0;
     boolean first_game = true;
     int p1_wins, p2_wins = 0;
     int size = 10;
-    //   String realBoard[][] = new String[10][10];
+
     int board[][] =
             {
                     {R.id.stone00, R.id.stone01, R.id.stone02, R.id.stone03, R.id.stone04, R.id.stone05, R.id.stone06, R.id.stone07, R.id.stone08, R.id.stone09,
@@ -74,6 +82,9 @@ public class BoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
+
+        //set the timer variable
+        timer = (Chronometer) findViewById(R.id.timer_display);
 
         Intent passed = getIntent();
 
@@ -150,6 +161,9 @@ public class BoardActivity extends AppCompatActivity {
                         onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
                     }
 
+                    timer.setBase(SystemClock.elapsedRealtime());
+                    timer.start();
+
                 } else {
                     player = 0;
                     ((TextView) findViewById(R.id.player_turn_text)).setText(" " +
@@ -157,6 +171,8 @@ public class BoardActivity extends AppCompatActivity {
                     stone.setBackgroundResource(R.drawable.white_board);
                     stone.setTextColor(Color.rgb(255, 255, 255));
                     stone.setText("R");
+                    timer.setBase(SystemClock.elapsedRealtime());
+                    timer.start();
                 }
             }
 
@@ -555,7 +571,6 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
@@ -575,11 +590,10 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
-            System.out.println(s + " blocked best 4 move" + bestMove.i + " " + bestMove.j);;
+            System.out.println(s + " blocked best 4 move" + bestMove.i + " " + bestMove.j);
             return bestMove;
         }
 
@@ -595,11 +609,10 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
-            System.out.println(s + " found best 3 move" + bestMove.i + " " + bestMove.j);;
+            System.out.println(s + " found best 3 move" + bestMove.i + " " + bestMove.j);
             return bestMove;
         }
 
@@ -615,7 +628,6 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
@@ -636,7 +648,6 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
@@ -656,7 +667,6 @@ public class BoardActivity extends AppCompatActivity {
                         bestMove = new Move(i, j, moveWorth);
                         thisBoard[i][j] = " ";
                     } else thisBoard[i][j] = " ";
-                    ;
                 }
             }
         if (oldWorth > 0) {
@@ -668,7 +678,8 @@ public class BoardActivity extends AppCompatActivity {
             for (int j = 0; j < size; j++) {
                 if (thisBoard[i][j].compareTo(" ") == 0) {
                     System.out.println(s + " first valid move" + i + " " + j);
-                    return bestMove = new Move(i, j, 0);
+                    bestMove = new Move(i, j, 0);
+                    return bestMove;
                 }
             }
         return bestMove;
