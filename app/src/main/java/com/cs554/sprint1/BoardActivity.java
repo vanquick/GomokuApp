@@ -2,6 +2,7 @@ package com.cs554.sprint1;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.GridLayout;
@@ -215,7 +217,7 @@ public class BoardActivity extends AppCompatActivity {
                         System.out.println("Computer thinking");
                         Move computerMove = bestmove("R", makeboard(board), 4);
                         System.out.println("Computer says: " + computerMove.i + " " + computerMove.j);
-                        //onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
+                        onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
                     }
 
                     timer.setBase(SystemClock.elapsedRealtime());
@@ -243,7 +245,7 @@ public class BoardActivity extends AppCompatActivity {
                 w.dispose();
                 return;*/
             }
-            if (analyzed("G", makeboard(board))) {
+            if (analyzer("G", makeboard(board))) {
                 System.out.println("GREEN WINS!");
                 p1_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -253,7 +255,7 @@ public class BoardActivity extends AppCompatActivity {
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
 
-            } else if (analyzed("R", makeboard(board))) {
+            } else if (analyzer("R", makeboard(board))) {
                 System.out.println("RED WINS!");
                 p2_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -556,7 +558,7 @@ public class BoardActivity extends AppCompatActivity {
                         && board.grid[i][j] == board.grid[i + 2][j]
                         && board.grid[i][j] == board.grid[i + 3][j]
                         && board.grid[i][j] == board.grid[i + 4][j])
-                    return true;
+                    return true;*/
     public int analyzer5(String s, String[][] board) {
         String ji;
         String jmini, jmin2i, jminimin2;
