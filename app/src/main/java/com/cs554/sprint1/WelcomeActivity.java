@@ -125,10 +125,17 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         //first task to complete is 2 player offline freestyle
-//        if (num_players == 2 && !on_line && !standard_mode)
-        if (!on_line && !standard_mode)
+        if (!single && !on_line && !standard_mode)
         {
             Intent newScreen = new Intent(WelcomeActivity.this, BoardActivity.class);
+            Bundle extras = new Bundle();
+            extras.putInt("size", board_size);
+            extras.putBoolean("single", single);
+            extras.putBoolean("standard_mode", standard_mode);
+            extras.putBoolean("on_line", on_line);
+            extras.putInt("score1", 0);
+            extras.putInt("score2", 0);
+            newScreen.putExtras(extras);
             newScreen.putExtra("size", board_size);
             newScreen.putExtra("players", num_players);
             startActivity(newScreen);
