@@ -95,7 +95,7 @@ public class BoardActivity extends AppCompatActivity {
         rematch_button = (Button)findViewById(R.id.rematch_button);
         winner_text = (TextView)findViewById(R.id.winner_text);
         menu = (TextView)findViewById(R.id.exit_button);
-
+//new liune
         Intent passed = getIntent();
         size = passed.getExtras().getInt("size");
         single = passed.getExtras().getBoolean("single");
