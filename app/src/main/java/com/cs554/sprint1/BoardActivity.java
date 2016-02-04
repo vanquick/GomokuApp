@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,8 +31,10 @@ import java.util.TimerTask;
 public class BoardActivity extends AppCompatActivity {
 
     Chronometer timer;
-    int player = 0;
-    boolean first_game = true;
+    TextView player_turn, scores, winner_text, menu;
+    Button rematch_button;
+    Typeface tf;
+    int player, score1, score2 = 0;
     boolean standard, cpu, mult_device, single = false;
     int p1_wins, p2_wins = 0;
     int size = 0;
@@ -86,27 +90,33 @@ public class BoardActivity extends AppCompatActivity {
 
         //set the timer variable and other widget variables
         timer = (Chronometer) findViewById(R.id.timer_display);
-        TextView player_turn = (TextView)findViewById(R.id.player_turn_text);
+        player_turn = (TextView)findViewById(R.id.player_turn_text);
+        scores = (TextView)findViewById(R.id.scores_text);
+        rematch_button = (Button)findViewById(R.id.rematch_button);
+        winner_text = (TextView)findViewById(R.id.winner_text);
+        menu = (TextView)findViewById(R.id.exit_button);
 
         Intent passed = getIntent();
+        size = passed.getExtras().getInt("size");
+        single = passed.getExtras().getBoolean("single");
+        standard = passed.getExtras().getBoolean("standard_mode");
+        cpu = passed.getExtras().getBoolean("on_line");
+        mult_device = passed.getExtras().getBoolean("on_line");
+        p1_wins = passed.getExtras().getInt("score1");
+        p2_wins = passed.getExtras().getInt("score2");
+
+        //set scores
+        scores.setText("Player1: "+ p1_wins + "    Player2: "+ p2_wins);
+
 
         //get cool typeface for the Gomoku title
-        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/DIRTYEGO.TTF");
+        tf = Typeface.createFromAsset(getAssets(), "fonts/DIRTYEGO.TTF");
         timer.setTypeface(tf);
         player_turn.setTypeface(tf);
-
-
-
-        //on the first match...
-
-        if (first_game) {
-            first_game = false;
-            size = passed.getExtras().getInt("size");
-            single = passed.getExtras().getBoolean("single");
-            standard = passed.getExtras().getBoolean("standard_mode");
-            cpu = passed.getExtras().getBoolean("on_line");
-            mult_device = passed.getExtras().getBoolean("on_line");
-        }
+        scores.setTypeface(tf);
+        rematch_button.setTypeface(tf);
+        winner_text.setTypeface(tf);
+        menu.setTypeface(tf);
 
         //if the size is 15, show the 15X15 buttons
         //if size is 20, show all buttons
@@ -125,11 +135,6 @@ public class BoardActivity extends AppCompatActivity {
 
                 }
             }
-
-//            button.setLayoutParams(param);
-
-
-
         }
         if (size == 15) {
             for (int i = 0; i < 15; i++) {
@@ -262,11 +267,16 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     public void resetGame(View view) {
-        player = 0;
-        gameOver = false;
-        setContentView(R.layout.activity_board);
-        ((TextView)findViewById(R.id.scores_text)).setText(
-                "Player 1: " + p1_wins + "    Player 2: " + p2_wins);
+        Intent newScreen = new Intent(BoardActivity.this, BoardActivity.class);
+        Bundle extras = new Bundle();
+        extras.putInt("size", size);
+        extras.putBoolean("single", single);
+        extras.putBoolean("standard_mode", standard);
+        extras.putBoolean("on_line", cpu);
+        extras.putInt("score1", p1_wins);
+        extras.putInt("score2", p2_wins);
+        newScreen.putExtras(extras);
+        startActivity(newScreen);
     }
 
     int win_r1, win_c1, win_r2, win_c2;  // When a player wins by getting five or more
@@ -449,6 +459,11 @@ public class BoardActivity extends AppCompatActivity {
             }
         return false;
     }
+
+    public void finish(View view) {
+        finish();
+    }
+
     /*for (int i = 0; i < board.grid.length; i++) {
         for (int j = 0; j < board.grid[0].length; j++) {
             if (i < (board.grid.length - 4))

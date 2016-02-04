@@ -128,6 +128,8 @@ public class WelcomeActivity extends AppCompatActivity {
             extras.putBoolean("single", single);
             extras.putBoolean("standard_mode", standard_mode);
             extras.putBoolean("on_line", on_line);
+            extras.putInt("score1", 0);
+            extras.putInt("score2", 0);
             newScreen.putExtras(extras);
             startActivity(newScreen);
         }

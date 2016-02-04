@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
-            android:textSize="40sp"
+            android:textSize="80sp"
             android:id="@+id/player_turn_text"
             android:text="Player 1's Turn"/>
 
@@ -36,7 +36,7 @@
             android:gravity="right"
             android:textColor="@android:color/white"
             android:id="@+id/timer_display"
-            android:textSize="40sp"
+            android:textSize="80sp"
             />
     </LinearLayout>
 
@@ -44,6 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:id="@+id/button_layout">
 
         <Button
@@ -5157,31 +5159,29 @@
 
     </GridLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:id="@+id/scores_text"
-        android:textSize="40dp"
-        android:text=""/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:textColor="@android:color/white"
             android:id="@+id/winner_text"
             android:text=""
-            android:textSize="20dp"/>
+            android:textSize="80dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="60sp"
             android:visibility="gone"
             android:text="Rematch?"
             android:background="@null"
@@ -5190,6 +5190,30 @@
             android:onClick="resetGame"
             android:id="@+id/rematch_button" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60sp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:text="Menu"
+            android:background="@null"
+            android:textColor="@android:color/white"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:onClick="finish"
+            android:id="@+id/exit_button" />
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:id="@+id/scores_text"
+        android:textSize="80dp"
+        android:text=""/>
 
 </LinearLayout>
