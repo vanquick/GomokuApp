@@ -2,19 +2,23 @@ package com.cs554.sprint1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 // Changed project name to cs554.sprint1
 
 public class WelcomeActivity extends AppCompatActivity {
-
-    int board_size = 0;
-    boolean on_line, standard_mode, single = false;
+    //testcomment
+    int num_players, board_size = 0;
+    boolean on_line, standard_mode = false;
 
 // Testing check into project repository again
 
@@ -34,15 +38,16 @@ public class WelcomeActivity extends AppCompatActivity {
 
         switch (view.getId())
         {
-            case R.id.one_palyer_radio:
+            case R.id.one_player_radio:
                 if(players_checked) {
-                    single = true;
+                    num_players = 1;
+             //       Toast.makeText(this, "you picked one player mode", Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.two_player_radio:
                 if (players_checked)
                 {
-                    single = false;
+                    num_players = 2;
                     break;
                 }
         }
@@ -80,7 +85,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     standard_mode = true;
                     break;
                 }
-            case R.id.freestylee_radio:
+            case R.id.freestyle_radio:
                 if (button_checked)
                 {
                     standard_mode = false;
@@ -120,15 +125,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         //first task to complete is 2 player offline freestyle
-        if (!single && !on_line && !standard_mode)
+//        if (num_players == 2 && !on_line && !standard_mode)
+        if (!on_line && !standard_mode)
         {
             Intent newScreen = new Intent(WelcomeActivity.this, BoardActivity.class);
-            Bundle extras = new Bundle();
-            extras.putInt("size", board_size);
-            extras.putBoolean("single", single);
-            extras.putBoolean("standard_mode", standard_mode);
-            extras.putBoolean("on_line", on_line);
-            newScreen.putExtras(extras);
+            newScreen.putExtra("size", board_size);
+            newScreen.putExtra("players", num_players);
             startActivity(newScreen);
         }
         else
