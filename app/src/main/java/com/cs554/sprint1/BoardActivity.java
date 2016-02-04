@@ -29,7 +29,7 @@ public class BoardActivity extends AppCompatActivity {
 
     int players;
     boolean playingAgainstComputer = true;
-
+    //test
     Chronometer timer;
     TextView player_turn, scores, winner_text, menu;
     Button rematch_button;
