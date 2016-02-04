@@ -32,7 +32,10 @@ public class BoardActivity extends AppCompatActivity {
     boolean first_game = true;
     int p1_wins, p2_wins = 0;
     int size = 10;
-
+    /*static final int EMPTY = 0,       // Represents an empty square.
+            WHITE = 1,       // A white piece.
+            BLACK = 2;
+    int board1[];*/
     int board[][] =
             {
                     {R.id.stone00, R.id.stone01, R.id.stone02, R.id.stone03, R.id.stone04, R.id.stone05, R.id.stone06, R.id.stone07, R.id.stone08, R.id.stone09,
@@ -143,7 +146,12 @@ public class BoardActivity extends AppCompatActivity {
         TextView winner_text = (TextView) findViewById(R.id.winner_text);
         Button rematch_button = (Button) findViewById(R.id.rematch_button);
         System.out.println("Button clicked");
-
+        /*for (int row = 0; row < 13; row++)         // Fill the board with EMPTYs
+            for (int col = 0; col < 13; col++)
+                board[row][col] = EMPTY;
+        int currentPlayer = BLACK;
+        board[row][col] =  currentPlayer;
+        */
         if (stone.getText().toString().compareTo(" ") == 0) {
             {
                 if (player == 0) {
@@ -158,7 +166,7 @@ public class BoardActivity extends AppCompatActivity {
                         System.out.println("Computer thinking");
                         Move computerMove = bestmove("R", makeboard(board), 4);
                         System.out.println("Computer says: " + computerMove.i + " " + computerMove.j);
-                        onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
+                        //onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
                     }
 
                     timer.setBase(SystemClock.elapsedRealtime());
@@ -175,8 +183,18 @@ public class BoardActivity extends AppCompatActivity {
                     timer.start();
                 }
             }
+            /*if (winner(row, col)) {  // First, check for a winner.
+                int currentPlayer=0;
+                if (currentPlayer == WHITE)
+                    gameOver("WHITE wins the game!");
+                else
+                    gameOver("BLACK wins the game!");
 
-            if (analyzer("G", makeboard(board))) {
+
+                w.dispose();
+                return;*/
+            }
+            if (analyzed("G", makeboard(board))) {
                 System.out.println("GREEN WINS!");
                 p1_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -186,7 +204,7 @@ public class BoardActivity extends AppCompatActivity {
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
 
-            } else if (analyzer("R", makeboard(board))) {
+            } else if (analyzed("R", makeboard(board))) {
                 System.out.println("RED WINS!");
                 p2_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -199,7 +217,7 @@ public class BoardActivity extends AppCompatActivity {
 
 
         }
-    }
+
 
     public void resetGame(View view) {
         player = 0;
@@ -209,6 +227,209 @@ public class BoardActivity extends AppCompatActivity {
                 "Player 1: " + p1_wins + "    Player 2: " + p2_wins);
     }
 
+    int win_r1,win_r2,win_c1,win_c2;
+
+    private boolean winner(int row, int col) {
+        // This is called just after a piece has been played on the
+        // square in the specified row and column.  It determines
+        // whether that was a winning move by counting the number
+        // of squares in a line in each of the four possible
+        // directions from (row,col).  If there are 5 squares (or more)
+        // in a row in any direction, then the game is won.
+
+        if (count(board[row][col], row, col, 1, 0) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 0, 1) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 1, -1) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 1, 1) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 1, 0) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 0, 1) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 1, -1) >= 5)
+            return true;
+        if (count(board[row][col], row, col, 1, 1) >= 5)
+            return true;
+
+          /* When we get to this point, we know that the game is not
+             won.  The value of win_r1, which was changed in the count()
+             method, has to be reset to -1, to avoid drawing a red line
+             on the board. */
+
+        win_r1 = -1;
+        return false;
+
+    }  // end winner()
+    private int count(int player, int row, int col, int dirX, int dirY) {
+        // Counts the number of the specified player's pieces starting at
+        // square (row,col) and extending along the direction specified by
+        // (dirX,dirY).  It is assumed that the player has a piece at
+        // (row,col).  This method looks at the squares (row + dirX, col+dirY),
+        // (row + 2*dirX, col + 2*dirY), ... until it hits a square that is
+        // off the board or is not occupied by one of the players pieces.
+        // It counts the squares that are occupied by the player's pieces.
+        // Furthermore, it sets (win_r1,win_c1) to mark last position where
+        // it saw one of the player's pieces.  Then, it looks in the
+        // opposite direction, at squares (row - dirX, col-dirY),
+        // (row - 2*dirX, col - 2*dirY), ... and does the same thing.
+        // Except, this time it sets (win_r2,win_c2) to mark the last piece.
+        // Note:  The values of dirX and dirY must be 0, 1, or -1.  At least
+        // one of them must be non-zero.
+
+        int ct = 1;  // Number of pieces in a row belonging to the player.
+
+        int r, c;    // A row and column to be examined
+
+        r = row + dirX;  // Look at square in specified direction.
+        c = col + dirY;
+        while (r >= 0 && r < 13 && c >= 0 && c < 13 && board[r][c] == player) {
+            // Square is on the board and contains one of the players's pieces.
+            ct++;
+            r += dirX;  // Go on to next square in this direction.
+            c += dirY;
+        }
+
+        win_r1 = r - dirX;  // The next-to-last square looked at.
+       win_c1 = c - dirY;  //    (The LAST one looked at was off the board or
+        //    did not contain one of the player's pieces.
+
+        r = row - dirX;  // Look in the opposite direction.
+        c = col - dirY;
+        while (r >= 0 && r < 13 && c >= 0 && c < 13 && board[r][c] == player) {
+            // Square is on the board and contains one of the players's pieces.
+            ct++;
+            r -= dirX;   // Go on to next square in this direction.
+            c -= dirY;
+        }
+
+        win_r2 = r + dirX;
+        win_c2 = c + dirY;
+
+        // At this point, (win_r1,win_c1) and (win_r2,win_c2) mark the endpoints
+        // of the line of pieces belonging to the player.
+
+        return ct;
+
+    }  // end count()
+
+    public boolean analyzed(String s, String[][] board) {
+        String ji;
+        String jmini, jmin2i, jminimin2;
+        String jplusi, jplus2i, jplus2imin;
+        String jimin, jimin2;
+        String jiplus, jiplus2, jmin2imin;
+        String jminimin, jmin2imin2, jmin2iplus;
+        String jplusiplus, jplus2iplus2;
+        String jminiplus, jmin2iplus2;
+        String jplusimin, jplus2imin2;
+
+
+
+        for (int j = 3; j < 17; j++)
+            for (int i = 3; i < 17; i++) {
+                ji = board[j][i];
+                jmini = board[j - 1][i];
+                jplusi = board[j + 1][i];
+                jimin = board[j][i - 1];
+                jiplus = board[j][i + 1];
+                jminimin = board[j - 1][i - 1];
+                jplusiplus = board[j + 1][i + 1];
+                jminiplus = board[j - 1][i + 1];
+                jplusimin = board[j + 1][i - 1];
+                jmin2i = board[j - 2][i];
+                jplus2i = board[j + 2][i];
+                jimin2 = board[j][i - 2];
+                jiplus2 = board[j][i + 2];
+                jplus2iplus2 = board[j + 2][i + 2];
+                jmin2iplus2 = board[j - 2][i + 2];
+                jplus2imin2 = board[j + 2][i - 2];
+                jmin2imin2 = board[j - 2][i - 2];
+                jmin2imin = board[j - 2][i - 1];
+                jmin2iplus = board[j - 2][i + 1];
+                jminimin2 = board[j - 1][i - 2];
+                String jminiplus2 = board[j - 1][i + 2];
+                String jplusimin2 = board[j + 1][i - 2];
+                String jplus2iplus = board[j + 2][i + 1];
+                String jplusiplus2 = board[j + 1][i + 2];
+                jplus2imin = board[j + 2][i - 1];
+                String jmin3imin3 = board[j - 3][i - 3];
+                String jmin3imin2 = board[j - 3][i - 2];
+                String jmin3imin = board[j - 3][i - 1];
+                String jmin2imin3 = board[j - 2][i - 3];
+                String jminimin3 = board[j - 1][i - 3];
+                String jimin3 = board[j][i - 3];
+                String jplusimin3 = board[j + 1][i - 3];
+                String jplus2imin3 = board[j + 2][i - 3];
+                String jplus3imin3 = board[j + 3][i - 3];
+                String jplus3imin2 = board[j + 3][i - 2];
+                String jplus3imin = board[j + 3][i - 1];
+                String jplus3i = board[j + 3][i];
+                String jplus3iplus = board[j + 3][i + 1];
+                String jplus3iplus2 = board[j + 3][i + 2];
+                String jplus3iplus3 = board[j + 3][i + 3];
+                String jplus2iplus3 = board[j + 2][i + 3];
+                String jplusiplus3 = board[j + 1][i + 3];
+                String jiplus3 = board[j][i + 3];
+                String jminiplus3 = board[j - 1][i + 3];
+                String jmin2iplus3 = board[j - 2][i + 3];
+                String jmin3iplus3 = board[j - 3][i + 3];
+                String jmin3iplus2 = board[j - 3][i + 2];
+                String jmin3iplus = board[j - 3][i + 1];
+                String jmin3i = board[j - 3][i];
+
+
+                if
+                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
+                            && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0)
+
+                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
+                            && (jplus3imin3.compareTo(s) != 0) && (jmin3iplus3.compareTo(s) != 0))
+
+                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0)
+                            && (jimin3.compareTo(s) !=0) && (jiplus3.compareTo(s) != 0))
+
+                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0)
+                            && (jmin3i.compareTo(s) != 0) && jplus3i.compareTo(s) != 0)
+
+                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0)
+                            && (jminimin3.compareTo(s) != 0) && jminiplus3.compareTo(s) != 0)
+
+                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0)
+                            && (jplusimin3.compareTo(s) != 0) && (jplusiplus3.compareTo(s) != 0))
+
+                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
+                            && (jplus2imin3.compareTo(s)!= 0) && (jplus2iplus3.compareTo(s) != 0))
+
+                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0)
+                            && (jmin2imin3.compareTo(s) != 0) && jmin2iplus3.compareTo(s) != 0)
+
+                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
+                            && (jmin3imin2.compareTo(s) != 0) && (jplus3imin2.compareTo(s) != 0))
+
+                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
+                            && (jmin3iplus2.compareTo(s) != 0) && (jplus3iplus2.compareTo(s) != 0))
+
+                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jplus2imin.compareTo(s) == 0)
+                            && (jmin3imin.compareTo(s) != 0) && (jplus3imin.compareTo(s) != 0))
+
+                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0)
+                            && (jmin3iplus.compareTo(s) != 0) && (jplus3iplus.compareTo(s) != 0))
+
+                        || ((jmin3imin3.compareTo(s) != 0) && (jmin3imin2.compareTo(s) ==0) && (jmin3imin.compareTo(s) == 0) && (jmin3i.compareTo(s) == 0) && jmin3iplus.compareTo(s) == 0)
+                            && (jmin3iplus2.compareTo(s) ==0) && (jmin3iplus3.compareTo(s) != 0)
+
+                        || ((jmin3imin3.compareTo(s) !=0) && (jmin2imin3.compareTo(s) == 0) && (jminimin3.compareTo(s) == 0) && (jplusimin3.compareTo(s) == 0) &&( jplus2imin3.compareTo(s) == 0)
+                            && (jplus3imin3.compareTo(s) != 0))
+
+                        ) {
+                    return true;
+                }
+            }
+        return false;
+    }
     public boolean analyzer(String s, String[][] board) {
         String ji;
         String jmini, jmin2i, jminimin2;
@@ -268,7 +489,6 @@ public class BoardActivity extends AppCompatActivity {
             }
         return false;
     }
-
     public int analyzer5(String s, String[][] board) {
         String ji;
         String jmini, jmin2i, jminimin2;
