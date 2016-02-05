@@ -34,8 +34,8 @@ public class BoardActivity extends AppCompatActivity {
     TextView player_turn, scores, winner_text, menu;
     Button rematch_button;
     Typeface tf;
-    int player, score1, score2 = 0;
-    boolean standard, cpu, mult_device, single = false;
+    int player= 0;
+    boolean standard, on_line, mult_device, single = false;
     int p1_wins, p2_wins = 0;
     int size = 0;
     int board[][] =
@@ -100,8 +100,7 @@ public class BoardActivity extends AppCompatActivity {
         size = passed.getExtras().getInt("size");
         single = passed.getExtras().getBoolean("single");
         standard = passed.getExtras().getBoolean("standard_mode");
-        cpu = passed.getExtras().getBoolean("on_line");
-        mult_device = passed.getExtras().getBoolean("on_line");
+        on_line = passed.getExtras().getBoolean("on_line");
         p1_wins = passed.getExtras().getInt("score1");
         p2_wins = passed.getExtras().getInt("score2");
 
@@ -128,14 +127,10 @@ public class BoardActivity extends AppCompatActivity {
             for (int i = 0; i < 10; i++){
                 for (int j = 0; j < 10; j++) {
                     Button button = (Button) (findViewById(board[i][j]));
-//                    Toast.makeText(this, "size = "+, Toast.LENGTH_LONG).show();
-  //                  button.setLayoutParams(new LinearLayout.LayoutParams(30,30));
-
                     ViewGroup.LayoutParams params = button.getLayoutParams();
                     params.width = params.width + 10;
                     params.height = params.height + 10;
                     button.setLayoutParams(params);
-
                 }
             }
         }
@@ -148,11 +143,9 @@ public class BoardActivity extends AppCompatActivity {
                     params.width = params.width - 5;
                     params.height = params.height -5;
                     button.setLayoutParams(params);
-
                 }
             }
         }
-
         if (size > 15) {
              for (int i = 0; i < 20; i++) {
                  for (int j = 0; j < 20; j++) {
@@ -162,35 +155,10 @@ public class BoardActivity extends AppCompatActivity {
                      params.width = params.width - 10;
                      params.height = params.height -10;
                      button.setLayoutParams(params);
-
                  }
              }
         }
-
-
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_welcome, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-
-//        return super.onOptionsItemSelected(item);
-//    }
 
     public void onButtonClicked(View view) {
 
@@ -199,25 +167,28 @@ public class BoardActivity extends AppCompatActivity {
         Button stone = (Button) view;
         TextView winner_text = (TextView) findViewById(R.id.winner_text);
         Button rematch_button = (Button) findViewById(R.id.rematch_button);
-        System.out.println("Button clicked");
 
         if (stone.getText().toString().compareTo("") == 0) {
             {
                 if (player == 0) {
-//                    stone.setBackgroundColor(Color.RED);
                     player = 1;
-//                    (findViewById(R.id.turnButton)).setBackgroundColor(Color.RED);
-                    ((TextView)findViewById(R.id.player_turn_text)).setText("" +
-                            "Player 2's Turn");
+                    player_turn.setText("Player 2's Turn");
                     stone.setBackgroundResource(R.drawable.black_board);
                     stone.setTextColor(0);
                     stone.setText("G");
 
-                    if (playingAgainstComputer) {
+                    if (single) {
                         System.out.println("Computer thinking");
-                        Move computerMove = bestmove("R", makeboard(board), 4);
+                        Move computerMove = ComputerMove.bestmove("R", makeboard(board), 4, size);
+
                         System.out.println("Computer says: " + computerMove.i + " " + computerMove.j);
-                        onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
+//                        onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
+                        player = 0;
+                        player_turn.setText("Player 1's Turn");
+                        Button cpu = (Button)findViewById(board[computerMove.i][computerMove.j]);
+                        cpu.setBackgroundResource(R.drawable.white_board);
+                        cpu.setTextColor(0);
+                        cpu.setText("R");
                     }
 
                     timer.setBase(SystemClock.elapsedRealtime());
@@ -244,8 +215,10 @@ public class BoardActivity extends AppCompatActivity {
 
                 w.dispose();
                 return;*/
-            }
-            if (analyzer("G", makeboard(board))) {
+        }
+
+        if(!standard) {
+            if (AnalyzeThis.analyzer("G", makeboard(board))) {
                 System.out.println("GREEN WINS!");
                 p1_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -255,7 +228,7 @@ public class BoardActivity extends AppCompatActivity {
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
 
-            } else if (analyzer("R", makeboard(board))) {
+            } else if (AnalyzeThis.analyzer("R", makeboard(board))) {
                 System.out.println("RED WINS!");
                 p2_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -265,6 +238,29 @@ public class BoardActivity extends AppCompatActivity {
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
             }
+        }
+        else{
+            if (AnalyzeThis.analyzed("G", makeboard(board))) {
+                System.out.println("GREEN WINS!");
+                p1_wins++;
+                ((TextView) findViewById(R.id.scores_text)).setText(
+                        "Player 1: " + p1_wins + "    Player 2: " + p2_wins);
+                winner_text.setText(
+                        "Player 1 Wins");
+                rematch_button.setVisibility(view.VISIBLE);
+                gameOver = true;
+
+            } else if (AnalyzeThis.analyzed("R", makeboard(board))) {
+                System.out.println("RED WINS!");
+                p2_wins++;
+                ((TextView) findViewById(R.id.scores_text)).setText(
+                        "Player 1: " + p1_wins + "    Player 2: " + p2_wins);
+                winner_text.setText(
+                        "Player 2 Wins");
+                rematch_button.setVisibility(view.VISIBLE);
+                gameOver = true;
+            }
+        }
 
 
         }
@@ -276,13 +272,28 @@ public class BoardActivity extends AppCompatActivity {
         extras.putInt("size", size);
         extras.putBoolean("single", single);
         extras.putBoolean("standard_mode", standard);
-        extras.putBoolean("on_line", cpu);
+        extras.putBoolean("on_line", on_line);
         extras.putInt("score1", p1_wins);
         extras.putInt("score2", p2_wins);
         newScreen.putExtras(extras);
         startActivity(newScreen);
     }
 
+    public void finish(View view) {
+        finish();
+    }
+
+    public String[][] makeboard(int[][] board) {
+        String[][] stoneBoard = new String[20][20];
+        for (int i = 0; i < 20; i++)
+            for (int j = 0; j < 20; j++) {
+                stoneBoard[i][j] = String.valueOf(((Button) findViewById(board[i][j])).getText());
+                if (stoneBoard[i][j].compareTo("") == 0) stoneBoard[i][j] = " ";
+            }
+        return stoneBoard;
+    }
+}
+    /*not used????????????????
     int win_r1,win_r2,win_c1,win_c2;
 
     private boolean winner(int row, int col) {
@@ -310,15 +321,17 @@ public class BoardActivity extends AppCompatActivity {
         if (count(board[row][col], row, col, 1, 1) >= 5)
             return true;
 
-          /* When we get to this point, we know that the game is not
-             won.  The value of win_r1, which was changed in the count()
-             method, has to be reset to -1, to avoid drawing a red line
-             on the board. */
+          // When we get to this point, we know that the game is not
+          //   won.  The value of win_r1, which was changed in the count()
+          //   method, has to be reset to -1, to avoid drawing a red line
+          //   on the board.
 
         win_r1 = -1;
         return false;
 
-    }  // end winner()
+    }  // end winner()  */
+
+    /*not used ??????????????????????????????
     private int count(int player, int row, int col, int dirX, int dirY) {
         // Counts the number of the specified player's pieces starting at
         // square (row,col) and extending along the direction specified by
@@ -369,638 +382,6 @@ public class BoardActivity extends AppCompatActivity {
 
         return ct;
 
-    }  // end count()
-
-    public boolean analyzed(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
+    }  // end count()  */
 
 
-
-        for (int j = 3; j < 17; j++)
-            for (int i = 3; i < 17; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-                String jmin3imin3 = board[j - 3][i - 3];
-                String jmin3imin2 = board[j - 3][i - 2];
-                String jmin3imin = board[j - 3][i - 1];
-                String jmin2imin3 = board[j - 2][i - 3];
-                String jminimin3 = board[j - 1][i - 3];
-                String jimin3 = board[j][i - 3];
-                String jplusimin3 = board[j + 1][i - 3];
-                String jplus2imin3 = board[j + 2][i - 3];
-                String jplus3imin3 = board[j + 3][i - 3];
-                String jplus3imin2 = board[j + 3][i - 2];
-                String jplus3imin = board[j + 3][i - 1];
-                String jplus3i = board[j + 3][i];
-                String jplus3iplus = board[j + 3][i + 1];
-                String jplus3iplus2 = board[j + 3][i + 2];
-                String jplus3iplus3 = board[j + 3][i + 3];
-                String jplus2iplus3 = board[j + 2][i + 3];
-                String jplusiplus3 = board[j + 1][i + 3];
-                String jiplus3 = board[j][i + 3];
-                String jminiplus3 = board[j - 1][i + 3];
-                String jmin2iplus3 = board[j - 2][i + 3];
-                String jmin3iplus3 = board[j - 3][i + 3];
-                String jmin3iplus2 = board[j - 3][i + 2];
-                String jmin3iplus = board[j - 3][i + 1];
-                String jmin3i = board[j - 3][i];
-
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
-                            && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0)
-
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
-                            && (jplus3imin3.compareTo(s) != 0) && (jmin3iplus3.compareTo(s) != 0))
-
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0)
-                            && (jimin3.compareTo(s) !=0) && (jiplus3.compareTo(s) != 0))
-
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0)
-                            && (jmin3i.compareTo(s) != 0) && jplus3i.compareTo(s) != 0)
-
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0)
-                            && (jminimin3.compareTo(s) != 0) && jminiplus3.compareTo(s) != 0)
-
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0)
-                            && (jplusimin3.compareTo(s) != 0) && (jplusiplus3.compareTo(s) != 0))
-
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
-                            && (jplus2imin3.compareTo(s)!= 0) && (jplus2iplus3.compareTo(s) != 0))
-
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0)
-                            && (jmin2imin3.compareTo(s) != 0) && jmin2iplus3.compareTo(s) != 0)
-
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
-                            && (jmin3imin2.compareTo(s) != 0) && (jplus3imin2.compareTo(s) != 0))
-
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
-                            && (jmin3iplus2.compareTo(s) != 0) && (jplus3iplus2.compareTo(s) != 0))
-
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jplus2imin.compareTo(s) == 0)
-                            && (jmin3imin.compareTo(s) != 0) && (jplus3imin.compareTo(s) != 0))
-
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0)
-                            && (jmin3iplus.compareTo(s) != 0) && (jplus3iplus.compareTo(s) != 0))
-
-                        || ((jmin3imin3.compareTo(s) != 0) && (jmin3imin2.compareTo(s) ==0) && (jmin3imin.compareTo(s) == 0) && (jmin3i.compareTo(s) == 0) && jmin3iplus.compareTo(s) == 0)
-                            && (jmin3iplus2.compareTo(s) ==0) && (jmin3iplus3.compareTo(s) != 0)
-
-                        || ((jmin3imin3.compareTo(s) !=0) && (jmin2imin3.compareTo(s) == 0) && (jminimin3.compareTo(s) == 0) && (jplusimin3.compareTo(s) == 0) &&( jplus2imin3.compareTo(s) == 0)
-                            && (jplus3imin3.compareTo(s) != 0))
-
-                        ) {
-                    return true;
-                }
-            }
-        return false;
-    }
-    public boolean analyzer(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
-
-        for (int j = 2; j < 18; j++)
-            for (int i = 2; i < 18; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0))
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0))
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0))
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0))
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jplus2imin.compareTo(s) == 0))
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0))
-
-                        ) {
-                    return true;
-                }
-            }
-        return false;
-    }
-
-    public void finish(View view) {
-        finish();
-    }
-
-    /*for (int i = 0; i < board.grid.length; i++) {
-        for (int j = 0; j < board.grid[0].length; j++) {
-            if (i < (board.grid.length - 4))
-                if (board.grid[i][j] == b
-                        && board.grid[i][j] == board.grid[i + 1][j]
-                        && board.grid[i][j] == board.grid[i + 2][j]
-                        && board.grid[i][j] == board.grid[i + 3][j]
-                        && board.grid[i][j] == board.grid[i + 4][j])
-                    return true;*/
-    public int analyzer5(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
-        int cnt = 0;
-        for (int j = 2; j < 18; j++)
-            for (int i = 2; i < 18; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0))
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0))
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0))
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0))
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0))
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jplus2imin.compareTo(s) == 0))
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0))
-
-                        ) {
-                    cnt++;
-                }
-            }
-        return cnt;
-    }
-
-    public int analyzer4(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
-        int cnt = 0;
-        for (int j = 2; j < 18; j++)
-            for (int i = 2; i < 18; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0))
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0))
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0))
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0))
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0))
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0))
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0))
-
-                        ) {
-                    cnt++;
-                }
-            }
-        return cnt;
-    }
-
-    public int analyzer3(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
-        int cnt = 0;
-        for (int j = 2; j < 18; j++)
-            for (int i = 2; i < 18; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0))
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0))
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0))
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0))
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0))
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0))
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0))
-
-                        ) {
-                    cnt++;
-                }
-            }
-        return cnt;
-    }
-
-    public int analyzer2(String s, String[][] board) {
-        String ji;
-        String jmini, jmin2i, jminimin2;
-        String jplusi, jplus2i, jplus2imin;
-        String jimin, jimin2;
-        String jiplus, jiplus2, jmin2imin;
-        String jminimin, jmin2imin2, jmin2iplus;
-        String jplusiplus, jplus2iplus2;
-        String jminiplus, jmin2iplus2;
-        String jplusimin, jplus2imin2;
-        int cnt = 0;
-        for (int j = 2; j < 18; j++)
-            for (int i = 2; i < 18; i++) {
-                ji = board[j][i];
-                jmini = board[j - 1][i];
-                jplusi = board[j + 1][i];
-                jimin = board[j][i - 1];
-                jiplus = board[j][i + 1];
-                jminimin = board[j - 1][i - 1];
-                jplusiplus = board[j + 1][i + 1];
-                jminiplus = board[j - 1][i + 1];
-                jplusimin = board[j + 1][i - 1];
-                jmin2i = board[j - 2][i];
-                jplus2i = board[j + 2][i];
-                jimin2 = board[j][i - 2];
-                jiplus2 = board[j][i + 2];
-                jplus2iplus2 = board[j + 2][i + 2];
-                jmin2iplus2 = board[j - 2][i + 2];
-                jplus2imin2 = board[j + 2][i - 2];
-                jmin2imin2 = board[j - 2][i - 2];
-                jmin2imin = board[j - 2][i - 1];
-                jmin2iplus = board[j - 2][i + 1];
-                jminimin2 = board[j - 1][i - 2];
-                String jminiplus2 = board[j - 1][i + 2];
-                String jplusimin2 = board[j + 1][i - 2];
-                String jplus2iplus = board[j + 2][i + 1];
-                String jplusiplus2 = board[j + 1][i + 2];
-                jplus2imin = board[j + 2][i - 1];
-
-                if
-                        (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0))
-                        || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0))
-                        || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0))
-                        || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0))
-                        || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0))
-                        || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0))
-                        || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0))
-                        || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0))
-                        || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0))
-
-                        ) {
-                    cnt++;
-                }
-            }
-        return cnt;
-    }
-
-
-    public String[][] makeboard(int[][] board) {
-        String[][] stoneBoard = new String[20][20];
-        for (int i = 0; i < 20; i++)
-            for (int j = 0; j < 20; j++) {
-                stoneBoard[i][j] = String.valueOf(((Button) findViewById(board[i][j])).getText());
-                if (stoneBoard[i][j].compareTo("") == 0) stoneBoard[i][j] = " ";
-            }
-        return stoneBoard;
-    }
-
-    public Move bestmove(String s, String board[][], int depth) {
-        Move move, worstMove;
-        Move bestMove = new Move(0, 0, 0);
-        String[][] thisBoard = board;
-        String otherStone = (s.compareTo("G") == 0) ? "R" : "G";
-        int oldWorth, moveWorth;
-
-        for (int i = 0; i < size; i++)
-            System.out.println(Arrays.toString(thisBoard[i]));
-
-        // make winning move
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = s;
-                    if (analyzer5(s, thisBoard) > 0) {
-                        System.out.println(s + " found winning move 5" + i + " " + j);
-                        bestMove = new Move(i, j, 1);
-                        thisBoard[i][j] = " ";
-                        return bestMove;
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-
-        // block opponent's winning move
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-
-                    thisBoard[i][j] = otherStone;
-                    if (analyzer5(otherStone, thisBoard) > 0) {
-                        System.out.println(s + " blocked winning move 5" + i + " " + j);
-                        bestMove = new Move(i, j, 0);
-                        thisBoard[i][j] = " ";
-                        return bestMove;
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-
-        // increase 4 sequence by as much as possible with this move
-        int fourStones = analyzer4(s, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = s;
-                    if ((moveWorth = analyzer4(s, thisBoard) - fourStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " found best 4 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-        // block as many 4 sequences as possible with this move
-        fourStones = analyzer4(otherStone, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = otherStone;
-                    if ((moveWorth = analyzer4(otherStone, thisBoard) - fourStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " blocked best 4 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-        // increase 3 sequence by as much as possible with this move
-        int threeStones = analyzer3(s, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = s;
-                    if ((moveWorth = analyzer3(s, thisBoard) - threeStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " found best 3 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-        // block as many 3 sequences as possible with this move
-        threeStones = analyzer3(otherStone, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = otherStone;
-                    if ((moveWorth = analyzer3(otherStone, thisBoard) - threeStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " blocked best 3 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-
-        // make as many 2 sequences as possible with this move
-        int twoStones = analyzer2(otherStone, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = s;
-                    if ((moveWorth = analyzer2(s, thisBoard) - twoStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " found best 2 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-        // block as many 2 sequences as possible with this move
-        twoStones = analyzer2(otherStone, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = otherStone;
-                    if ((moveWorth = analyzer2(otherStone, thisBoard) - twoStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " blocked best 2 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    System.out.println(s + " first valid move" + i + " " + j);
-                    bestMove = new Move(i, j, 0);
-                    return bestMove;
-                }
-            }
-        return bestMove;
-    }
-}
-/*
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < 5; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    bestMove = new Move(i, j, 0);
-                    thisBoard[i][j] = s;
-                    //          if (depth > 0)
-                    {
-                        System.out.println(otherStone + " recursing " + i + " " + j);
-                        worstMove = bestmove(otherStone, thisBoard, depth);
-                        if (worstMove.getVal() < 1)  {//>= bestMove.getVal()) {
-                            System.out.println(otherStone + " returning worst move " + i + " " + j);
-                            thisBoard[i][j] = " ";
-                            return bestMove;
-                        }
-                    } /* else {
-                        System.out.println(otherStone + " depth expired " + i + " " + j);
-                        thisBoard[i][j] = " ";
-                        return bestMove;
-                    }
-                    thisBoard[i][j] = " ";
-                }
-            }
-        System.out.println(otherStone + " default move " + bestMove.i + " " + bestMove.j);
-        return bestMove;
-
-    }
-}
-*/

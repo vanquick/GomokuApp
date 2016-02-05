@@ -5182,7 +5182,7 @@
             android:textSize="60sp"
             android:visibility="gone"
             android:text="Rematch?"
-            android:background="@android:color/black"
+            android:background="@null"
             android:textColor="@android:color/white"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:onClick="resetGame"
