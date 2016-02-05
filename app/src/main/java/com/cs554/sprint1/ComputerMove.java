@@ -49,27 +49,8 @@ public class ComputerMove {
                 }
             }
 
-        // increase 4 sequence by as much as possible with this move
-        int fourStones = analyzer4(s, thisBoard);
-        oldWorth = 0;
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                if (thisBoard[i][j].compareTo(" ") == 0) {
-                    thisBoard[i][j] = s;
-                    if ((moveWorth = analyzer4(s, thisBoard) - fourStones) > oldWorth) {
-                        oldWorth = moveWorth;
-                        bestMove = new Move(i, j, moveWorth);
-                        thisBoard[i][j] = " ";
-                    } else thisBoard[i][j] = " ";
-                }
-            }
-        if (oldWorth > 0) {
-            System.out.println(s + " found best 4 move" + bestMove.i + " " + bestMove.j);
-            return bestMove;
-        }
-
         // block as many 4 sequences as possible with this move
-        fourStones = analyzer4(otherStone, thisBoard);
+        int fourStones = analyzer4(otherStone, thisBoard);
         oldWorth = 0;
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++) {
@@ -84,6 +65,25 @@ public class ComputerMove {
             }
         if (oldWorth > 0) {
             System.out.println(s + " blocked best 4 move" + bestMove.i + " " + bestMove.j);
+            return bestMove;
+        }
+
+        // increase 4 sequence by as much as possible with this move
+        fourStones = analyzer4(s, thisBoard);
+        oldWorth = 0;
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++) {
+                if (thisBoard[i][j].compareTo(" ") == 0) {
+                    thisBoard[i][j] = s;
+                    if ((moveWorth = analyzer4(s, thisBoard) - fourStones) > oldWorth) {
+                        oldWorth = moveWorth;
+                        bestMove = new Move(i, j, moveWorth);
+                        thisBoard[i][j] = " ";
+                    } else thisBoard[i][j] = " ";
+                }
+            }
+        if (oldWorth > 0) {
+            System.out.println(s + " found best 4 move" + bestMove.i + " " + bestMove.j);
             return bestMove;
         }
 
