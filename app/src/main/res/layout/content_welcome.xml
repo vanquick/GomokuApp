@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="On-line"
                 android:id="@+id/on_line_radio"
-                android:onClick="SelectMode"
+                android:onClick="SelectOnLine"
                 />
 
             <RadioButton
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="Off-line"
                 android:id="@+id/off_line_radio"
-                android:onClick="SelectMode"
+                android:onClick="SelectOnLine"
                 />
         </RadioGroup>
 

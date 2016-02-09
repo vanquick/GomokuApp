@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -28,13 +30,12 @@ public class BoardActivity extends AppCompatActivity {
 
 
     int players;
-    boolean playingAgainstComputer = true;
 
     Chronometer timer;
     TextView player_turn, scores, winner_text, menu;
     Button rematch_button;
     Typeface tf;
-    int player= 0;
+    int player, game= 0;
     boolean standard, on_line, mult_device, single = false;
     int p1_wins, p2_wins = 0;
     int size = 0;
@@ -88,6 +89,15 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
+        //get the screen size so that we can size the text
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int screenWidth = displaymetrics.widthPixels;
+        int screenHeight = displaymetrics.heightPixels;
+
+        // Get the screen's density scale
+        float scale = getResources().getDisplayMetrics().density;
+
         //set the timer variable
         timer = (Chronometer) findViewById(R.id.timer_display);
         player_turn = (TextView)findViewById(R.id.player_turn_text);
@@ -95,7 +105,7 @@ public class BoardActivity extends AppCompatActivity {
         rematch_button = (Button)findViewById(R.id.rematch_button);
         winner_text = (TextView)findViewById(R.id.winner_text);
         menu = (TextView)findViewById(R.id.exit_button);
-//new liune
+
         Intent passed = getIntent();
         size = passed.getExtras().getInt("size");
         single = passed.getExtras().getBoolean("single");
@@ -103,9 +113,12 @@ public class BoardActivity extends AppCompatActivity {
         on_line = passed.getExtras().getBoolean("on_line");
         p1_wins = passed.getExtras().getInt("score1");
         p2_wins = passed.getExtras().getInt("score2");
+        size = passed.getExtras().getInt("size");
+        players = passed.getExtras().getInt("players");
 
         //set scores
         scores.setText("Player1: "+ p1_wins + "    Player2: "+ p2_wins);
+     //   winner_text.setText("Playing");
 
 
         //get cool typeface for the Gomoku title
@@ -116,44 +129,54 @@ public class BoardActivity extends AppCompatActivity {
         rematch_button.setTypeface(tf);
         winner_text.setTypeface(tf);
         menu.setTypeface(tf);
-        size = passed.getExtras().getInt("size");
-        players = passed.getExtras().getInt("players");
-        playingAgainstComputer = (players == 1);
+
+
+        //set sizes of the text fields
+        timer.setTextSize((int)(.13 * (screenWidth/scale)));
+        player_turn.setTextSize((int)(.13 * (screenWidth/scale)));
+        scores.setTextSize((int) (.13 * (screenWidth/scale)));
+        rematch_button.setTextSize((int)(.1 * (screenWidth/scale)));
+        menu.setTextSize((int) (.1 * (screenWidth/scale)));
+        winner_text.setTextSize((int)(.13 * (screenWidth/scale)));
+
 
         //if the size is 15, show the 15X15 buttons
         //if size is 20, show all buttons
         //10X10 is default
         if (size == 10){
+            GridLayout grid = (GridLayout)(findViewById(R.id.button_layout));
+            grid.setPadding(0,(int)(.03 * (screenHeight)), 0, (int)(.03 * (screenHeight)));
             for (int i = 0; i < 10; i++){
                 for (int j = 0; j < 10; j++) {
                     Button button = (Button) (findViewById(board[i][j]));
                     ViewGroup.LayoutParams params = button.getLayoutParams();
-                    params.width = params.width + 10;
-                    params.height = params.height + 10;
+                    params.width = params.height = (int)(.05 * (screenHeight));
                     button.setLayoutParams(params);
                 }
             }
         }
         if (size == 15) {
+            GridLayout grid = (GridLayout)(findViewById(R.id.button_layout));
+            grid.setPadding(0,(int)(.01 * (screenHeight)), 0, 0);
             for (int i = 0; i < 15; i++) {
                 for (int j = 0; j < 15; j++) {
                     Button button = (Button) (findViewById(board[i][j]));
                     button.setVisibility(View.VISIBLE);
                     ViewGroup.LayoutParams params = button.getLayoutParams();
-                    params.width = params.width - 5;
-                    params.height = params.height -5;
+                    params.width = params.height = (int)(.035 * (screenHeight));
                     button.setLayoutParams(params);
                 }
             }
         }
         if (size > 15) {
+            GridLayout grid = (GridLayout)(findViewById(R.id.button_layout));
+            grid.setPadding(0,(int)(.01 * (screenHeight)), 0, 0);
              for (int i = 0; i < 20; i++) {
                  for (int j = 0; j < 20; j++) {
                      Button button = (Button) (findViewById(board[i][j]));
                      button.setVisibility(View.VISIBLE);
                      ViewGroup.LayoutParams params = button.getLayoutParams();
-                     params.width = params.width - 10;
-                     params.height = params.height -10;
+                     params.width = params.height = (int)(.027 * (screenHeight));
                      button.setLayoutParams(params);
                  }
              }
@@ -182,7 +205,6 @@ public class BoardActivity extends AppCompatActivity {
                         Move computerMove = ComputerMove.bestmove("R", makeboard(board), 4, size);
 
                         System.out.println("Computer says: " + computerMove.i + " " + computerMove.j);
-//                        onButtonClicked(findViewById(board[computerMove.i][computerMove.j]));
                         player = 0;
                         player_turn.setText("Player 1's Turn");
                         Button cpu = (Button)findViewById(board[computerMove.i][computerMove.j]);
