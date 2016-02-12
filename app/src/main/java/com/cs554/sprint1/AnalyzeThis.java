@@ -24,7 +24,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (j == size - len){
+                else if (j == size - len){
                     if (board[i][j].compareTo(s) == 0
                             && board[i][j+1].compareTo(s) == 0
                             && board[i][j+2].compareTo(s) == 0
@@ -35,7 +35,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (board[i][j].compareTo(s) == 0
+                else if (board[i][j].compareTo(s) == 0
                         && board[i][j+1].compareTo(s) == 0
                         && board[i][j+2].compareTo(s) == 0
                         && board[i][j+3].compareTo(s) == 0
@@ -66,7 +66,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (i == size - len){
+                else if (i == size - len){
                     if (board[i][j].compareTo(s) == 0
                             && board[i+1][j].compareTo(s) == 0
                             && board[i+2][j].compareTo(s) == 0
@@ -77,7 +77,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (board[i][j].compareTo(s) == 0
+                else if (board[i][j].compareTo(s) == 0
                         && board[i+1][j].compareTo(s) == 0
                         && board[i+2][j].compareTo(s) == 0
                         && board[i+3][j].compareTo(s) == 0
@@ -107,7 +107,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if ( (i == 0 && j < size - len) || (i < size - len && j == 0) ){
+                else if ( (i == 0 && j < size - len) || (i < size - len && j == 0) ){
                     if (board[i][j].compareTo(s) == 0
                             && board[i+1][j+1].compareTo(s) == 0
                             && board[i+2][j+2].compareTo(s) == 0
@@ -118,7 +118,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if ( (i == size - len && j > 0) || (i > 0 && j == size - len) ){
+                else if ( (i == size - len && j > 0) || (i > 0 && j == size - len) ){
                     if (board[i][j].compareTo(s) == 0
                             && board[i+1][j+1].compareTo(s) == 0
                             && board[i+2][j+2].compareTo(s) == 0
@@ -129,7 +129,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (board[i][j].compareTo(s) == 0
+                else if (board[i][j].compareTo(s) == 0
                         && board[i+1][j+1].compareTo(s) == 0
                         && board[i+2][j+2].compareTo(s) == 0
                         && board[i+3][j+3].compareTo(s) == 0
@@ -158,7 +158,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if ( (i == 0 && j > len - 1) || (i < size - len && j == size - 1) ){
+                else if ( (i == 0 && j > len - 1) || (i < size - len && j == size - 1) ){
                     if (board[i][j].compareTo(s) == 0
                             && board[i+1][j-1].compareTo(s) == 0
                             && board[i+2][j-2].compareTo(s) == 0
@@ -169,7 +169,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if ( (i > 0 && j == len - 1) || (i == size - len && j < size - 1) ){
+                else if ( (i > 0 && j == len - 1) || (i == size - len && j < size - 1) ){
                     if (board[i][j].compareTo(s) == 0
                             && board[i+1][j-1].compareTo(s) == 0
                             && board[i+2][j-2].compareTo(s) == 0
@@ -180,7 +180,7 @@ public class AnalyzeThis {
                         return true;
                     }
                 }
-                if (board[i][j].compareTo(s) == 0
+                else if (board[i][j].compareTo(s) == 0
                         && board[i+1][j-1].compareTo(s) == 0
                         && board[i+2][j-2].compareTo(s) == 0
                         && board[i+3][j-3].compareTo(s) == 0

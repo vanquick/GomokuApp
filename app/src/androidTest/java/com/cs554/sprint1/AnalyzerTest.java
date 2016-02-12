@@ -33,19 +33,12 @@ public class AnalyzerTest extends TestCase {
             //rows
             for (int i = size; i < 1; i--){
                 for (int j = size; j < len -1; j--){
-                    System.out.print(size+" "+i+" "+j+"row2\n");
+                    //System.out.print(size+" "+i+" "+j+"row2\n");
                     clearBoard(test_board);
-                    for (int k = 0; k < 5; k++){
-                        test_board[i][j-k] = "x";
-                        if (k < 4) {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(false, test);
-                        }
-                        else {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(true, test);
-                        }
-                    }
+                        test_board[i][j] = test_board[i][j-1] = test_board[i][j-2]
+                                = test_board[i][j-3] = test_board[i][j-4] = "x";
+                        test = AnalyzeThis.analyzer("x", test_board);
+                        assertEquals(true, test);
                 }
             }
         }
@@ -64,16 +57,9 @@ public class AnalyzerTest extends TestCase {
                                         test_board[i][j+l] = "x";
                                         test_board[i][j+m] = "x";
                                         test_board[i][j+n] = "x";
-                                        test_board[i][j+o] = "x";
-                                        if ((k+l+m+n+o == 10) && (k != l) && (k != m) && (k!=n) && (k!=o)
-                                                && (l!= m) && (l!=n) &&(l!=o) && (m!= n) && (m!=o) && (n!= o)){
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(true, test);
-                                        }
-                                        else{
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(false, test);
-                                        }
+                                        test_board[i][j+o] = "y";
+                                        test = AnalyzeThis.analyzer("x", test_board);
+                                        assertEquals(false, test);
                                         test_board[i][j+k] = " ";
                                         test_board[i][j+l] = " ";
                                         test_board[i][j+m] = " ";
@@ -86,19 +72,12 @@ System.out.print("Columns\n");
             //columns top right to bottom left
             for (int i = 0; i < size - len+1; i++){
                 for (int j = 0; j < size; j++){
-                    System.out.print(size+" "+i+" "+j+"col1\n");
+                    //System.out.print(size+" "+i+" "+j+"col1\n");
                     clearBoard(test_board);
-                    for (int k = 0; k < 5; k++){
-                        test_board[i+k][j] = "x";
-                        if (k < 4) {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(false, test);
-                        }
-                        else {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(true, test);
-                        }
-                    }
+                        test_board[i][j] = test_board[i+1][j] = test_board[i+2][j]
+                                = test_board[i+3][j] = test_board[i+4][j] = "x";
+                        test = AnalyzeThis.analyzer("x", test_board);
+                        assertEquals(true, test);
                 }
             }
         }
@@ -109,19 +88,12 @@ System.out.print("Columns\n");
             //rows
             for (int i = size; i < len-1; i--){
                 for (int j = size; j < 1; j--){
-                    System.out.print(size+" "+i+" "+j+"col2\n");
+                    //System.out.print(size+" "+i+" "+j+"col2\n");
                     clearBoard(test_board);
-                    for (int k = 0; k < 5; k++){
-                        test_board[i-k][j] = "x";
-                        if (k < 4) {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(false, test);
-                        }
-                        else {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(true, test);
-                        }
-                    }
+                        test_board[i][j] = test_board[i-1][j] = test_board[i-2][j]
+                                = test_board[i-3][j] = test_board[i-4][j] = "x";
+                    test = AnalyzeThis.analyzer("x", test_board);
+                    assertEquals(true, test);
                 }
             }
         }
@@ -140,16 +112,9 @@ System.out.print("Columns\n");
                                         test_board[i+l][j] = "x";
                                         test_board[i+m][j] = "x";
                                         test_board[i+n][j] = "x";
-                                        test_board[i+o][j] = "x";
-                                        if ((k+l+m+n+o == 10) && (k != l) && (k != m) && (k!=n) && (k!=o)
-                                                && (l!= m) && (l!=n) &&(l!=o) && (m!= n) && (m!=o) && (n!= o)){
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(true, test);
-                                        }
-                                        else{
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(false, test);
-                                        }
+                                        test_board[i+o][j] = "y";
+                                        test = AnalyzeThis.analyzer("x", test_board);
+                                        assertEquals(false, test);
                                         test_board[i+k][j] = " ";
                                         test_board[i+l][j] = " ";
                                         test_board[i+m][j] = " ";
@@ -162,20 +127,12 @@ System.out.print("Columns\n");
             //diagonal right to left (check lines like [0,4][1,3][2,2][3,1][4,0])
             for (int i = 0; i < size - len+1; i++){
                 for (int j = len-1; j < size; j++){
-                    System.out.print(size+" "+i+" "+j+"di1\n");
+                    //System.out.print(size+" "+i+" "+j+"di1\n");
                     clearBoard(test_board);
-                    for (int k = 0; k < 5; k++){
-                        test_board[i +k ][j - k] = "x";
-                        if (k < 4) {
-                            System.out.print("i: "+ (i+k) + " j: " +(j-k)+"\n");
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(false, test);
-                        }
-                        else {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(true, test);
-                        }
-                    }
+                    test_board[i][j] = test_board[i + 1][j - 1] = test_board[i + 2][j - 2] =
+                            test_board[i + 3][j - 3] = test_board[i + 4][j - 4] = "x";
+                    test = AnalyzeThis.analyzer("x", test_board);
+                    assertEquals(true, test);
                 }
             }
         }
@@ -194,16 +151,9 @@ System.out.print("Columns\n");
                                         test_board[i+l][j-l] = "x";
                                         test_board[i+m][j-m] = "x";
                                         test_board[i+n][j-n] = "x";
-                                        test_board[i+o][j-o] = "x";
-                                        if ((k+l+m+n+o == 10) && (k != l) && (k != m) && (k!=n) && (k!=o)
-                                                && (l!= m) && (l!=n) &&(l!=o) && (m!= n) && (m!=o) && (n!= o)){
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(true, test);
-                                        }
-                                        else{
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(false, test);
-                                        }
+                                        test_board[i+o][j-o] = "y";
+                                        test = AnalyzeThis.analyzer("x", test_board);
+                                        assertEquals(false, test);
                                         test_board[i+k][j-k] = " ";
                                         test_board[i+l][j-l] = " ";
                                         test_board[i+m][j-m] = " ";
@@ -219,19 +169,12 @@ System.out.print("Columns\n");
             //rows
             for (int i = 0; i < size - len+1; i++){
                 for (int j = 0; j < size - len+1; j++){
-                    System.out.print(size+" "+i+" "+j+"di2\n");
+                    //System.out.print(size+" "+i+" "+j+"di2\n");
                     clearBoard(test_board);
-                    for (int k = 0; k < 5; k++){
-                        test_board[i + k][j + k] = "x";
-                        if (k < 4) {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(false, test);
-                        }
-                        else {
-                            test = AnalyzeThis.analyzer("x", test_board);
-                            assertEquals(true, test);
-                        }
-                    }
+                    test_board[i][j] = test_board[i + 1][j + 1] = test_board[i + 2][j + 2] =
+                            test_board[i + 3][j + 3] = test_board[i + 4][j + 4] = "x";
+                    test = AnalyzeThis.analyzer("x", test_board);
+                    assertEquals(true, test);
                 }
             }
         }
@@ -250,22 +193,16 @@ System.out.print("Columns\n");
                                         test_board[i+l][j+l] = "x";
                                         test_board[i+m][j+m] = "x";
                                         test_board[i+n][j+n] = "x";
-                                        test_board[i+o][j+o] = "x";
-                                        if ((k+l+m+n+o == 10) && (k != l) && (k != m) && (k!=n) && (k!=o)
-                                                && (l!= m) && (l!=n) &&(l!=o) && (m!= n) && (m!=o) && (n!= o)){
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(true, test);
-                                        }
-                                        else{
-                                            test = AnalyzeThis.analyzer("x", test_board);
-                                            assertEquals(false, test);
-                                        }
+                                        test_board[i+o][j+o] = "y";
+                                        test = AnalyzeThis.analyzer("x", test_board);
+                                        assertEquals(false, test);
                                         test_board[i+k][j+k] = " ";
                                         test_board[i+l][j+l] = " ";
                                         test_board[i+m][j+m] = " ";
                                         test_board[i+n][j+n] = " ";
                                         test_board[i+o][j+o] = " ";
                                     }
+
   }
 
 
