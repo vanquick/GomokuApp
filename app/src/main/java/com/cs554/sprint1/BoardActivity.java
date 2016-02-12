@@ -262,7 +262,7 @@ public class BoardActivity extends AppCompatActivity {
             }
         }
         else{
-            if (AnalyzeThis.analyzed("G", makeboard(board))) {
+            if (AnalyzeThis.analyzed("G", makeboard(board), size)) {
                 System.out.println("GREEN WINS!");
                 p1_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
@@ -272,7 +272,7 @@ public class BoardActivity extends AppCompatActivity {
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
 
-            } else if (AnalyzeThis.analyzed("R", makeboard(board))) {
+            } else if (AnalyzeThis.analyzed("R", makeboard(board), size)) {
                 System.out.println("RED WINS!");
                 p2_wins++;
                 ((TextView) findViewById(R.id.scores_text)).setText(
