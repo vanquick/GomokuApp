@@ -77,7 +77,7 @@ public class AnalyzeThis {
                 if
                     //left diagnol
                         (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
-                        && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0)
+                        && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0 )
 
                         //right diagnol
                         || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
