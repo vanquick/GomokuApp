@@ -8,9 +8,7 @@ public class AnalyzeThis {
 
 
     //This is the function that reviews board for win in STANDARD mode
-    static boolean analyzed(String s, String[][] board, int size) {
-
-
+    static boolean analyzed(String s, String[][] board) {
         String ji;
         String jmini, jmin2i, jminimin2;
         String jplusi, jplus2i, jplus2imin;
@@ -22,7 +20,7 @@ public class AnalyzeThis {
         String jplusimin, jplus2imin2;
 
 
-
+//if(board)
         for (int j = 3; j < 17; j++)
             for (int i = 3; i < 17; i++) {
                 ji = board[j][i];
@@ -76,56 +74,67 @@ public class AnalyzeThis {
                 String jmin3i = board[j - 3][i];
 
 
-
                 if
+                    //left diagnol
                         (((ji.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
-                        && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0)
+                        && (jmin3imin3.compareTo(s) != 0) && jplus3iplus3.compareTo(s) != 0 )
 
+                        //right diagnol
                         || ((ji.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
                         && (jplus3imin3.compareTo(s) != 0) && (jmin3iplus3.compareTo(s) != 0))
 
+                        //horizontal middle
                         || ((ji.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0)
                         && (jimin3.compareTo(s) !=0) && (jiplus3.compareTo(s) != 0))
 
+                        //vertical middle
                         || ((ji.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0)
-                        && (jmin3i.compareTo(s) != 0) && (jplus3i.compareTo(s) != 0))
+                        && (jmin3i.compareTo(s) != 0) && jplus3i.compareTo(s) != 0)
 
+                        //horizontal +1
                         || ((jminimin.compareTo(s) == 0) && (jmini.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0)
                         && (jminimin3.compareTo(s) != 0) && jminiplus3.compareTo(s) != 0)
 
+                        //horizontal -1
                         || ((jplusimin.compareTo(s) == 0) && (jplusi.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0)
                         && (jplusimin3.compareTo(s) != 0) && (jplusiplus3.compareTo(s) != 0))
 
+                        //horizontal -2
                         || ((jplus2imin.compareTo(s) == 0) && (jplus2i.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
                         && (jplus2imin3.compareTo(s)!= 0) && (jplus2iplus3.compareTo(s) != 0))
 
+                        //horizontal +2
                         || ((jmin2imin.compareTo(s) == 0) && (jmin2i.compareTo(s) == 0) && (jmin2iplus.compareTo(s) == 0) && (jmin2iplus2.compareTo(s) == 0) && (jmin2imin2.compareTo(s) == 0)
                         && (jmin2imin3.compareTo(s) != 0) && jmin2iplus3.compareTo(s) != 0)
 
+                        //vertical -2
                         || ((jmin2imin2.compareTo(s) == 0) && (jimin2.compareTo(s) == 0) && (jminimin2.compareTo(s) == 0) && (jplusimin2.compareTo(s) == 0) && (jplus2imin2.compareTo(s) == 0)
                         && (jmin3imin2.compareTo(s) != 0) && (jplus3imin2.compareTo(s) != 0))
 
+                        //vertical +2
                         || ((jmin2iplus2.compareTo(s) == 0) && (jminiplus2.compareTo(s) == 0) && (jiplus2.compareTo(s) == 0) && (jplusiplus2.compareTo(s) == 0) && (jplus2iplus2.compareTo(s) == 0)
                         && (jmin3iplus2.compareTo(s) != 0) && (jplus3iplus2.compareTo(s) != 0))
 
+                        //vertical -1
                         || ((jmin2imin.compareTo(s) == 0) && (jminimin.compareTo(s) == 0) && (jimin.compareTo(s) == 0) && (jplusimin.compareTo(s) == 0) && (jplus2imin.compareTo(s) == 0)
                         && (jmin3imin.compareTo(s) != 0) && (jplus3imin.compareTo(s) != 0))
 
+                        //vertical +1
                         || ((jmin2iplus.compareTo(s) == 0) && (jminiplus.compareTo(s) == 0) && (jiplus.compareTo(s) == 0) && (jplusiplus.compareTo(s) == 0) && (jplus2iplus.compareTo(s) == 0)
                         && (jmin3iplus.compareTo(s) != 0) && (jplus3iplus.compareTo(s) != 0))
 
-                        || ((jmin3imin3.compareTo(s) != 0) && (jmin3imin2.compareTo(s) ==0) && (jmin3imin.compareTo(s) == 0) && (jmin3i.compareTo(s) == 0) && (jmin3iplus.compareTo(s) == 0)
-                        && (jmin3iplus2.compareTo(s) ==0) && (jmin3iplus3.compareTo(s) != 0))
+                        || ((jmin3imin3.compareTo(s) != 0) && (jmin3imin2.compareTo(s) ==0) && (jmin3imin.compareTo(s) == 0) && (jmin3i.compareTo(s) == 0) && jmin3iplus.compareTo(s) == 0)
+                        && (jmin3iplus2.compareTo(s) ==0) && (jmin3iplus3.compareTo(s) != 0)
 
-                        || ((jmin3imin3.compareTo(s) !=0) && (jmin2imin3.compareTo(s) == 0) && (jminimin3.compareTo(s) == 0) && (jimin3.compareTo(s) == 0) && (jplusimin3.compareTo(s) == 0) &&( jplus2imin3.compareTo(s) == 0)
-                        && (jplus3imin3.compareTo(s) != 0))
+                        //vertical -3
+                        || ((jmin3imin3.compareTo(s) !=0) && (jmin2imin3.compareTo(s) == 0) && (jminimin3.compareTo(s) == 0) && (jimin3.compareTo(s) ==0) && (jplusimin3.compareTo(s) == 0)
+                        &&( jplus2imin3.compareTo(s) == 0) && (jplus3imin3.compareTo(s) != 0))
 
                         ) {
                     return true;
                 }
             }
         return false;
-
     }
 
 
