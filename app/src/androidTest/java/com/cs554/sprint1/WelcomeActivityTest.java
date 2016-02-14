@@ -83,23 +83,14 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         TouchUtils.clickView(this, offline_Radio);
         TouchUtils.clickView(this, freestyle_Radio);
-        TouchUtils.clickView(this, one_player_Radio);
+        TouchUtils.clickView(this, two_player_Radio);
         TouchUtils.clickView(this, ten_Radio);
         TouchUtils.clickView(this, play_Button);
 
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 5000);
         assertNotNull(bActivity);
-
-        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
-        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
-        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
-        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
-        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
-
         delay(5);
-
         bActivity.finish();
-
     }
 
     public void testboardsize15() throws Throwable {
@@ -107,9 +98,7 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
         assertNotNull(wActivity);
-
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
@@ -177,6 +166,9 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         TouchUtils.clickView(this, play_Button);
 
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 5000);
+        while (!getInstrumentation().checkMonitorHit(activityMonitor, 1)) {
+        }
+        ;
         assertNotNull(bActivity);
         delay(5);
         bActivity.finish();
@@ -218,7 +210,97 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 50000);
         assertNotNull(bActivity);
-        delay(50);
+
+        String s = ((TextView) bActivity.findViewById(R.id.scores_text)).getText().toString();
+        assertTrue(s.indexOf("1: 0") != -1);
+        assertTrue(s.indexOf("2: 0") != -1);
+
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone10));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone11));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone12));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone13));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone05));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone65));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 2's Turn") != -1);
+
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone14));
+        delay(5);
+        assertEquals("Player 1 Wins", ((TextView) bActivity.findViewById(R.id.winner_text)).getText().toString());
+        s = ((TextView) bActivity.findViewById(R.id.scores_text)).getText().toString();
+        assertTrue(s.indexOf("1: 1") != -1);
+        assertTrue(s.indexOf("2: 0") != -1);
+
+        delay(5);
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.rematch_button));
+        delay(5);
+
+        //       TouchUtils.clickView(this, bActivity.findViewById(R.id.stone09));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone10));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone11));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone12));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone13));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone14));
+        delay(5);
+        assertEquals("Player 2 Wins", ((TextView) bActivity.findViewById(R.id.winner_text)).getText().toString());
+        s = ((TextView) bActivity.findViewById(R.id.scores_text)).getText().toString();
+        assertTrue(s.indexOf("1: 1") != -1);
+        assertTrue(s.indexOf("2: 1") != -1);
+        delay(5);
         bActivity.finish();
 
     }
@@ -258,7 +340,21 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 50000);
         assertNotNull(bActivity);
-        delay(50);
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone10));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone11));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone12));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone13));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone05));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone65));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone14));
+        delay(5);
+        assertEquals("Player 2 Wins", ((TextView) bActivity.findViewById(R.id.winner_text)).getText().toString());
+        //      assertFalse(((TextView) bActivity.findViewById(R.id.winner_text)).getText().toString().compareTo("Player 1 Wins") == 0);
         bActivity.finish();
     }
 
@@ -297,7 +393,20 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 50000);
         assertNotNull(bActivity);
-        delay(50);
+        delay(5);
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone10));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone11));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone12));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone13));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone05));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone65));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
+        TouchUtils.clickView(this, bActivity.findViewById(R.id.stone14));
+
         bActivity.finish();
 
     }
