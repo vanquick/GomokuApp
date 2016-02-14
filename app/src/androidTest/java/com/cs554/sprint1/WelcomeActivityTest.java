@@ -168,7 +168,7 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         bActivity = (BoardActivity) getInstrumentation().waitForMonitorWithTimeout(activityMonitor, 5000);
         while (!getInstrumentation().checkMonitorHit(activityMonitor, 1)) {
         }
-        ;
+
         assertNotNull(bActivity);
         delay(5);
         bActivity.finish();
