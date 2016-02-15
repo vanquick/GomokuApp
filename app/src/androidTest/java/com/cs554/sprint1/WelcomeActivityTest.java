@@ -1,11 +1,16 @@
 package com.cs554.sprint1;
 
 import android.app.Instrumentation;
+import android.os.Handler;
 import android.test.ActivityInstrumentationTestCase2;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.test.*;
+import android.widget.Toast;
 
 /**
  * Created by Sunil_Shenoy on 2/10/2016.
@@ -54,7 +59,16 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
+/*
+        final String ms = "Testing board size of 10";
+        ActivityInstrumentationTestCase2.runOnUiThread(new Runnable() {
+            public void run() {
+                EditText t = (EditText) wActivity.findViewById(R.id.test_message_text);
+                t.setText(ms);
+                t.setVisibility(View.VISIBLE);
+            }
+        });
+*/
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
         offline_Radio = (RadioButton) wActivity.findViewById(R.id.off_line_radio);
@@ -99,6 +113,8 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         wActivity = getActivity();
         assertNotNull(wActivity);
+
+        wActivity = getActivity();
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
@@ -384,7 +400,7 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         twenty_Radio = (RadioButton) wActivity.findViewById(R.id.twenty_radio);
 
         play_Button = (Button) wActivity.findViewById(R.id.play_button);
-
+        String s;
         TouchUtils.clickView(this, offline_Radio);
         TouchUtils.clickView(this, freestyle_Radio);
         TouchUtils.clickView(this, one_player_Radio);
@@ -395,17 +411,64 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         assertNotNull(bActivity);
         delay(5);
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone00));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone10));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone01));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone11));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone02));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone12));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone03));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone13));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone05));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone65));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone04));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
+
         TouchUtils.clickView(this, bActivity.findViewById(R.id.stone14));
+        delay(2);
+        s = ((TextView) bActivity.findViewById(R.id.player_turn_text)).getText().toString();
+        assertTrue(s.indexOf("Player 1's Turn") != -1);
 
         bActivity.finish();
 
@@ -418,6 +481,10 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
                 (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    void maketoast(String s, WelcomeActivity w) {
+        Toast.makeText(w, s, Toast.LENGTH_LONG).show();
     }
 
 }
