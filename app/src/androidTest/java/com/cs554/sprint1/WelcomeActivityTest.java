@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.test.*;
 import android.widget.Toast;
 
+import junit.framework.TestCase;
+
 /**
  * Created by Sunil_Shenoy on 2/10/2016.
  */
@@ -481,6 +483,11 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
                 (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    public void testzzalgorithms() {
+        (new AnalyzedTest()).testAnalyzed();
+        (new AnalyzerTest()).testAnalyzer();
     }
 
     void maketoast(String s, WelcomeActivity w) {
