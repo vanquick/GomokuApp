@@ -289,7 +289,7 @@ public class BoardActivity extends AppCompatActivity {
 
 
     public void resetGame(View view) {
-        Intent newScreen = new Intent(BoardActivity.this, BoardActivity.class);
+        /* Intent newScreen = new Intent(BoardActivity.this, BoardActivity.class);
         Bundle extras = new Bundle();
         extras.putInt("size", size);
         extras.putBoolean("single", single);
@@ -297,8 +297,94 @@ public class BoardActivity extends AppCompatActivity {
         extras.putBoolean("on_line", on_line);
         extras.putInt("score1", p1_wins);
         extras.putInt("score2", p2_wins);
-        newScreen.putExtras(extras);
-        startActivity(newScreen);
+        //   newScreen.putExtras(extras);
+        //  startActivity(newScreen);
+*/
+        gameOver = false;
+        setContentView(R.layout.activity_board);
+
+        //get the screen size so that we can size the text
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int screenWidth = displaymetrics.widthPixels;
+        int screenHeight = displaymetrics.heightPixels;
+
+        // Get the screen's density scale
+        float scale = getResources().getDisplayMetrics().density;
+
+        //set the timer variable
+        timer = (Chronometer) findViewById(R.id.timer_display);
+        player_turn = (TextView) findViewById(R.id.player_turn_text);
+        scores = (TextView) findViewById(R.id.scores_text);
+        rematch_button = (Button) findViewById(R.id.rematch_button);
+        winner_text = (TextView) findViewById(R.id.winner_text);
+        menu = (TextView) findViewById(R.id.exit_button);
+
+        //set scores
+        scores.setText("Player1: " + p1_wins + "    Player2: " + p2_wins);
+        //   winner_text.setText("Playing");
+
+        //get cool typeface for the Gomoku title
+        tf = Typeface.createFromAsset(getAssets(), "fonts/DIRTYEGO.TTF");
+        timer.setTypeface(tf);
+        player_turn.setTypeface(tf);
+        scores.setTypeface(tf);
+        rematch_button.setTypeface(tf);
+        winner_text.setTypeface(tf);
+        menu.setTypeface(tf);
+
+
+        //set sizes of the text fields
+        timer.setTextSize((int) (.13 * (screenWidth / scale)));
+        player_turn.setTextSize((int) (.13 * (screenWidth / scale)));
+        scores.setTextSize((int) (.13 * (screenWidth / scale)));
+        rematch_button.setTextSize((int) (.1 * (screenWidth / scale)));
+        menu.setTextSize((int) (.1 * (screenWidth / scale)));
+        winner_text.setTextSize((int) (.13 * (screenWidth / scale)));
+
+
+        //if the size is 15, show the 15X15 buttons
+        //if size is 20, show all buttons
+        //10X10 is default
+        if (size == 10) {
+            GridLayout grid = (GridLayout) (findViewById(R.id.button_layout));
+            grid.setPadding(0, (int) (.03 * (screenHeight)), 0, (int) (.03 * (screenHeight)));
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    Button button = (Button) (findViewById(board[i][j]));
+                    ViewGroup.LayoutParams params = button.getLayoutParams();
+                    params.width = params.height = (int) (.05 * (screenHeight));
+                    button.setLayoutParams(params);
+                }
+            }
+        }
+        if (size == 15) {
+            GridLayout grid = (GridLayout) (findViewById(R.id.button_layout));
+            grid.setPadding(0, (int) (.01 * (screenHeight)), 0, 0);
+            for (int i = 0; i < 15; i++) {
+                for (int j = 0; j < 15; j++) {
+                    Button button = (Button) (findViewById(board[i][j]));
+                    button.setVisibility(View.VISIBLE);
+                    ViewGroup.LayoutParams params = button.getLayoutParams();
+                    params.width = params.height = (int) (.035 * (screenHeight));
+                    button.setLayoutParams(params);
+                }
+            }
+        }
+        if (size > 15) {
+            GridLayout grid = (GridLayout) (findViewById(R.id.button_layout));
+            grid.setPadding(0, (int) (.01 * (screenHeight)), 0, 0);
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 20; j++) {
+                    Button button = (Button) (findViewById(board[i][j]));
+                    button.setVisibility(View.VISIBLE);
+                    ViewGroup.LayoutParams params = button.getLayoutParams();
+                    params.width = params.height = (int) (.027 * (screenHeight));
+                    button.setLayoutParams(params);
+                }
+            }
+        }
+
     }
 
     public void finish(View view) {

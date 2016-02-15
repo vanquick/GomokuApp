@@ -171,6 +171,15 @@
             android:onClick="GoToPlayScreen"
             />
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/play_button"
+            android:id="@+id/test_message_text"
+            android:text="Select board size"
+            android:visibility="gone" />
+
+
     </RelativeLayout>
 
 </ScrollView>
