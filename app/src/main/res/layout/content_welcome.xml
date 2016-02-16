@@ -176,9 +176,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/play_button"
             android:id="@+id/test_message_text"
-            android:text="Select board size"
+            android:text=""
+            android:textSize="50sp"
             android:visibility="gone" />
-
 
     </RelativeLayout>
 
