@@ -61,16 +61,16 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-/*
+
         final String ms = "Testing board size of 10";
-        ActivityInstrumentationTestCase2.runOnUiThread(new Runnable() {
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
             public void run() {
-                EditText t = (EditText) wActivity.findViewById(R.id.test_message_text);
-                t.setText(ms);
-                t.setVisibility(View.VISIBLE);
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
             }
         });
-*/
+
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
         offline_Radio = (RadioButton) wActivity.findViewById(R.id.off_line_radio);
@@ -118,6 +118,16 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
 
         wActivity = getActivity();
 
+        final String ms = "Testing board size of 15";
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
+            public void run() {
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
+            }
+        });
+
+
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
         offline_Radio = (RadioButton) wActivity.findViewById(R.id.off_line_radio);
@@ -155,8 +165,17 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
         assertNotNull(wActivity);
+
+        final String ms = "Testing board size of 20";
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
+            public void run() {
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
@@ -198,8 +217,16 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
         assertNotNull(wActivity);
+        final String ms = "Testing freestyle selection + winner, turn, rematch functions";
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
+            public void run() {
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
@@ -328,8 +355,17 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
         assertNotNull(wActivity);
+
+        final String ms = "Testing standard style selection";
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
+            public void run() {
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
@@ -381,8 +417,17 @@ public class WelcomeActivityTest extends ActivityInstrumentationTestCase2<Welcom
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(BoardActivity.class.getName(), null, false);
 
         wActivity = getActivity();
-
         assertNotNull(wActivity);
+
+        final String ms = "Testing computer play";
+        final TextView tv = ((EditText) wActivity.findViewById(R.id.test_message_text));
+        tv.post(new Runnable() {
+            public void run() {
+                tv.setText(ms);
+                tv.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         line_text = (TextView) wActivity.findViewById(R.id.line_text);
         online_Radio = (RadioButton) wActivity.findViewById(R.id.on_line_radio);
