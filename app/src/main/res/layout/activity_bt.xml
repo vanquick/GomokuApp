@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Paired Devices"
+        android:text="Available Devices"
         android:id="@+id/tvPD"
         />
     <ListView
@@ -14,15 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPD"
-        android:layout_above="@+id/bConnectNew">
+        android:layout_above="@+id/bConnectNew"
+        >
     </ListView>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@id/bConnectNew"
         android:layout_alignParentBottom="true"
+        android:id="@+id/bConnectNew"
         android:text="Scan"
-        android:onClick="scan"/>
+        android:onClick="ScanForDevices"/>
 
 </RelativeLayout>

@@ -2,16 +2,11 @@ package com.cs554.sprint1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 // Changed project name to cs554.sprint1
 
@@ -138,9 +133,19 @@ public class WelcomeActivity extends AppCompatActivity {
             newScreen.putExtras(extras);
             startActivity(newScreen);
         }
-        else
+        else if(on_line)
         {
-            Toast.makeText(this, "This option combo doesn't work yet :(", Toast.LENGTH_LONG).show();
+            Intent newScreen = new Intent(WelcomeActivity.this, btActivity.class);
+            Bundle extras = new Bundle();
+            extras.putInt("size", board_size);
+            extras.putBoolean("single", single);
+            extras.putBoolean("standard_mode", standard_mode);
+            extras.putBoolean("on_line", on_line);
+            extras.putInt("score1", 0);
+            extras.putInt("score2", 0);
+            newScreen.putExtras(extras);
+            startActivity(newScreen);
+            //Toast.makeText(this, "This option combo doesn't work yet :(", Toast.LENGTH_LONG).show();
         }
 
 
