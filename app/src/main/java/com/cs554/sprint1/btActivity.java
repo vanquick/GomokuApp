@@ -74,6 +74,8 @@ public class btActivity extends Activity implements OnItemClickListener {
         else{
             if(!btAdapter.isEnabled()){
                 turnOnBT();
+               //getPairedDevices();
+                //startDiscovery();
             }
 
             getPairedDevices();
@@ -95,7 +97,7 @@ public class btActivity extends Activity implements OnItemClickListener {
 
         Intent intent =new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         startActivityForResult(intent, 1);
-       startDiscovery();
+       //6startDiscovery();
     }
     private void getPairedDevices() {
         // TODO Auto-generated method stub

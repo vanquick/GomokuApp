@@ -135,7 +135,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
         else if(on_line)
         {
-            Intent newScreen = new Intent(WelcomeActivity.this, btActivity.class);
+            Intent newScreen = new Intent(WelcomeActivity.this, DeviceListActivity.class);
             Bundle extras = new Bundle();
             extras.putInt("size", board_size);
             extras.putBoolean("single", single);
@@ -145,6 +145,7 @@ public class WelcomeActivity extends AppCompatActivity {
             extras.putInt("score2", 0);
             newScreen.putExtras(extras);
             startActivity(newScreen);
+
             //Toast.makeText(this, "This option combo doesn't work yet :(", Toast.LENGTH_LONG).show();
         }
 
