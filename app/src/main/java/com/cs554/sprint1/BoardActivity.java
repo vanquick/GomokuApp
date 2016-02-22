@@ -226,7 +226,7 @@ public class BoardActivity extends AppCompatActivity {
                 w.dispose();
                 return;*/
         }
-        btActivity bt = null;
+
 
         if(!standard) {
             if (AnalyzeThis.analyzer("G", makeboard(board))) {
