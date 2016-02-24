@@ -23,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
     Switch aSwitch;
     Typeface tf;
 // Testing check into project repository again
-
+    //trst
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
