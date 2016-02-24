@@ -300,6 +300,25 @@ public class MainActivity extends AppCompatActivity {
 		super.onStop();
 	}
 
+	boolean on_line,offline, standard_mode, single = false;
+	public void PlayOnline(View view){
+		int num_players, board_size = 0;
+		//if(on_line)
+		//{
+			Intent newScreen = new Intent(MainActivity.this, WelcomeActivity.class);
+			Bundle extras = new Bundle();
+			extras.putInt("size", board_size);
+			extras.putBoolean("single", single);
+			extras.putBoolean("standard_mode", standard_mode);
+			extras.putBoolean("on_line", on_line);
+			extras.putInt("score1", 0);
+			extras.putInt("score2", 0);
+			newScreen.putExtras(extras);
+			startActivity(newScreen);
+
+			//Toast.makeText(this, "This option combo doesn't work yet :(", Toast.LENGTH_LONG).show();
+		//}
+	}
 	@Override
 	public void onDestroy() {
 		super.onDestroy();

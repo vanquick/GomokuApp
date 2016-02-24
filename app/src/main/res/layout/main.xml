@@ -21,10 +21,10 @@
 
         <EditText
             android:id="@+id/etMain"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
+            android:layout_weight=".36"
             android:inputType="none" />
 
         <Button
@@ -32,6 +32,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/OnlinePlay"
+            android:onClick="PlayOnline"/>
     </LinearLayout>
 
 </LinearLayout>
