@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +29,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
         play = (Button)findViewById(R.id.play_button);
         standard = (Button)findViewById(R.id.Standard);
         freestyle = (Button)findViewById(R.id.Freestyle);
@@ -36,8 +38,9 @@ public class WelcomeActivity extends AppCompatActivity {
         twentybytwenty = (Button)findViewById(R.id.TwentyByTwenty);
         ai = (Button)findViewById(R.id.AI);
         twoplayerlocal = (Button)findViewById(R.id.LocalTwoPlayer);
+
+
         tf = Typeface.createFromAsset(getAssets(), "fonts/DIRTYEGO.TTF");
-        textView = (TextView)findViewById(R.id.textViews);
         standard.setTypeface(tf);
         play.setTypeface(tf);
         freestyle.setTypeface(tf);
@@ -46,9 +49,26 @@ public class WelcomeActivity extends AppCompatActivity {
         twentybytwenty.setTypeface(tf);
         ai.setTypeface(tf);
         twoplayerlocal.setTypeface(tf);
-        //aSwitch = (Switch)findViewById(R.id.ToggleMode);
 
-//        Button play = (Button) findViewById(R.id.play_button);
+        //get the screen size so that we can size the text
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int screenWidth = displaymetrics.widthPixels;
+        int screenHeight = displaymetrics.heightPixels;
+
+        // Get the screen's density scale
+        float scale = getResources().getDisplayMetrics().density;
+
+        //set sizes of the text fields
+        freestyle.setTextSize((int) (.1 * (screenWidth / scale)));
+        standard.setTextSize((int) (.1 * (screenWidth / scale)));
+        twoplayerlocal.setTextSize((int) (.1 * (screenWidth / scale)));
+        ai.setTextSize((int) (.1 * (screenWidth / scale)));
+        tenbyten.setTextSize((int) (.1 * (screenWidth / scale)));
+        fifteenbyfifteen.setTextSize((int) (.1 * (screenWidth / scale)));
+        twentybytwenty.setTextSize((int) (.1 * (screenWidth / scale)));
+        play.setTextSize((int) (.2 * (screenWidth / scale)));
+
 
     }
 
@@ -160,24 +180,4 @@ public class WelcomeActivity extends AppCompatActivity {
 
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_welcome, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
-
-        return super.onOptionsItemSelected(item);
-    }
 }

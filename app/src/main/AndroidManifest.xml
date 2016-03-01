@@ -35,7 +35,7 @@
         <activity
             android:name=".Splash"
             android:configChanges="orientation"
-            android:label="@string/title_activity_splash"
+            android:label="GOMOKU!"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -60,9 +60,11 @@
         <activity
             android:name=".ModeSelect"
             android:label="@string/title_activity_vs_select"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="MainActivity" />
     </application>
 

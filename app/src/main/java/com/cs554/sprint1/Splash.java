@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Splash extends AppCompatActivity {
     private BluetoothChatService mChatService = null;
@@ -30,6 +31,7 @@ public class Splash extends AppCompatActivity {
         TextView main_title = (TextView) findViewById(R.id.main_title_text);
         main_title.setTypeface(tf);
         main_title.setTextSize((int) (.4 * (screenWidth / scale)));
+//        Toast.makeText(this, "scale " + scale + "width" + screenWidth, Toast.LENGTH_LONG).show();
 
         Button play_button = (Button) findViewById(R.id.play_button);
         play_button.setTypeface(tf);
