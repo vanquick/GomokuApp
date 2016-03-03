@@ -3,10 +3,7 @@ package com.cs554.sprint1;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Splash extends AppCompatActivity {
-
+    private BluetoothChatService mChatService = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +31,7 @@ public class Splash extends AppCompatActivity {
         TextView main_title = (TextView) findViewById(R.id.main_title_text);
         main_title.setTypeface(tf);
         main_title.setTextSize((int) (.4 * (screenWidth / scale)));
+//        Toast.makeText(this, "scale " + scale + "width" + screenWidth, Toast.LENGTH_LONG).show();
 
         Button play_button = (Button) findViewById(R.id.play_button);
         play_button.setTypeface(tf);
@@ -46,9 +44,23 @@ public class Splash extends AppCompatActivity {
 //        Toast.makeText(this, "height "+ screenHeight, Toast.LENGTH_LONG).show();
 
     }
+    public void onResume() {
+        super.onResume();
 
+        // Performing this check in onResume() covers the case in which BT was
+        // not enabled during onStart(), so we were paused to enable it...
+        // onResume() will be called when ACTION_REQUEST_ENABLE activity returns.
+
+        if (mChatService != null) {
+            // Only if the state is STATE_NONE, do we know that we haven't started already
+            if (mChatService.getState() == BluetoothChatService.STATE_NONE) {
+                // Start the Bluetooth chat services
+                mChatService.start();
+            }
+        }
+    }
     public void play_game(View view) {
-        Intent newScreen = new Intent(Splash.this, WelcomeActivity.class);
+        Intent newScreen = new Intent(Splash.this, ModeSelect.class);
         startActivity(newScreen);
 
     }

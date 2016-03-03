@@ -5,26 +5,14 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -38,6 +26,7 @@ public class BoardActivity extends AppCompatActivity {
     int player, game= 0;
     boolean standard, on_line, mult_device, single = false;
     int p1_wins, p2_wins = 0;
+    int filled, curr = 0;
     int size = 0;
     int board[][] =
             {
@@ -115,6 +104,7 @@ public class BoardActivity extends AppCompatActivity {
         p2_wins = passed.getExtras().getInt("score2");
         size = passed.getExtras().getInt("size");
         players = passed.getExtras().getInt("players");
+        filled = size * size;
 
         //set scores
         scores.setText("Player1: "+ p1_wins + "    Player2: "+ p2_wins);
@@ -199,6 +189,7 @@ public class BoardActivity extends AppCompatActivity {
                     stone.setBackgroundResource(R.drawable.black_board);
                     stone.setTextColor(0);
                     stone.setText("G");
+                    curr++;
 
                     if (single) {
                         System.out.println("Computer thinking");
@@ -211,6 +202,7 @@ public class BoardActivity extends AppCompatActivity {
                         cpu.setBackgroundResource(R.drawable.white_board);
                         cpu.setTextColor(0);
                         cpu.setText("R");
+                        curr++;
                     }
 
                     timer.setBase(SystemClock.elapsedRealtime());
@@ -223,6 +215,7 @@ public class BoardActivity extends AppCompatActivity {
                     stone.setBackgroundResource(R.drawable.white_board);
                     stone.setTextColor(Color.rgb(255, 255, 255));
                     stone.setText("R");
+                    curr++;
                     timer.setBase(SystemClock.elapsedRealtime());
                     timer.start();
                 }
@@ -239,6 +232,7 @@ public class BoardActivity extends AppCompatActivity {
                 return;*/
         }
 
+
         if(!standard) {
             if (AnalyzeThis.analyzer("G", makeboard(board))) {
                 System.out.println("GREEN WINS!");
@@ -249,6 +243,7 @@ public class BoardActivity extends AppCompatActivity {
                         "Player 1 Wins");
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
+                timer.stop();
 
             } else if (AnalyzeThis.analyzer("R", makeboard(board))) {
                 System.out.println("RED WINS!");
@@ -259,6 +254,14 @@ public class BoardActivity extends AppCompatActivity {
                         "Player 2 Wins");
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
+                timer.stop();
+            }
+
+            else if(curr == filled){
+                winner_text.setText("Stalemate");
+                rematch_button.setVisibility(view.VISIBLE);
+                gameOver = true;
+                timer.stop();
             }
         }
         else{
@@ -271,6 +274,7 @@ public class BoardActivity extends AppCompatActivity {
                         "Player 1 Wins");
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
+                timer.stop();
 
             } else if (AnalyzeThis.analyzed("R", makeboard(board), size)) {
                 System.out.println("RED WINS!");
@@ -281,6 +285,14 @@ public class BoardActivity extends AppCompatActivity {
                         "Player 2 Wins");
                 rematch_button.setVisibility(view.VISIBLE);
                 gameOver = true;
+                timer.stop();
+            }
+
+            else if(curr == filled){
+                winner_text.setText("Stalemate");
+                rematch_button.setVisibility(view.VISIBLE);
+                gameOver = true;
+                timer.stop();
             }
         }
 

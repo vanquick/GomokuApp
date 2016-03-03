@@ -6,4 +6,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.NoActionBar">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
 </resources>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fillViewport="false">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -17,171 +14,144 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context="com.cs554.sprint1.WelcomeActivity"
-        tools:showIn="@layout/activity_welcome">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/line_text"
-            android:text="Select online or offline"
-            />
+        tools:showIn="@layout/activity_welcome"
+        android:background="@drawable/red_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:includeFontPadding="false">
 
         <RadioGroup
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/line_text"
-            android:orientation="vertical"
-            android:id="@+id/line_radio_group"
-            >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="On-line"
-                android:id="@+id/on_line_radio"
-                android:onClick="SelectOnLine"
-                />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Off-line"
-                android:id="@+id/off_line_radio"
-                android:onClick="SelectOnLine"
-                />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/style_text"
-            android:layout_below="@id/line_radio_group"
-            android:text="Select freestyle or standard mode"
-            />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/style_text"
-            android:orientation="vertical"
-            android:id="@+id/style_radio_group"
-            >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Freestyle"
-                android:id="@+id/freestyle_radio"
-                android:onClick="SelectMode"
-                />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standard"
-                android:id="@+id/standard_radio"
-                android:onClick="SelectMode"
-                />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select number of players"
-            android:layout_below="@id/style_radio_group"
-            android:id="@+id/num_players_text"
-            />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/num_players_text"
-            android:orientation="vertical"
-            android:id="@+id/player_radio_group"
-            >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 Player"
-                android:id="@+id/one_player_radio"
-                android:onClick="SelectNumPlayers"
-                />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2 Player"
-                android:id="@+id/two_player_radio"
-                android:onClick="SelectNumPlayers"
-                />
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/player_radio_group"
-            android:id="@+id/board_size_text"
-            android:text="Select board size"
-            />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/board_size_text"
-            android:id="@+id/board_size_radio_group"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal"
+            android:id="@+id/style_radio_group"
+            android:paddingTop="80dp"
             >
+            <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="Freestyle"
+                android:id="@+id/Freestyle"
+                android:onClick="SelectMode"
+                android:checked="false"
+                />
+            <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="Standard"
+                android:id="@+id/Standard"
+                android:onClick="SelectMode"
+
+                />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/player_radio_group">
+            <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="Local 2 Player"
+                android:id="@+id/LocalTwoPlayer"
+                android:onClick="SelectNumPlayers"
+               />
+
+
 
             <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="A I"
+                android:id="@+id/AI"
+                android:onClick="SelectNumPlayers" />
+
+        </RadioGroup>
+
+
+
+
+        <RadioGroup
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/board_size_radio_group"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="10 X 10"
-                android:id="@+id/ten_radio"
+                android:id="@+id/TenByTen"
                 android:onClick="SelectSize"
-                />
+                android:textSize="35sp" />
 
             <RadioButton
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="15 X 15"
-                android:id="@+id/fifteen_radio"
+                android:id="@+id/FifteenByFifteen"
                 android:onClick="SelectSize"
-                />
+                android:textSize="35sp" />
 
             <RadioButton
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="20 X 20"
-                android:id="@+id/twenty_radio"
+                android:id="@+id/TwentyByTwenty"
                 android:onClick="SelectSize"
-                />
+                android:textSize="35sp" />
         </RadioGroup>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/board_size_radio_group"
-            android:text="PLAY"
-            android:id="@+id/play_button"
-            android:onClick="GoToPlayScreen"
-            />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/play_button"
-            android:id="@+id/test_message_text"
-            android:text=""
-            android:textSize="50sp"
-            android:visibility="gone" />
 
-    </RelativeLayout>
 
-</ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="PLAY"
+        android:id="@+id/play_button"
+        android:background="@null"
+        android:onClick="GoToPlayScreen"
+        android:textColor="@android:color/white"
+        android:textSize="100sp" />
+
+
+</LinearLayout>
+
+
 
 
